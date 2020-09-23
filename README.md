@@ -3,6 +3,8 @@
 
 An R inspired heterogeneous data frame, factor and some handy functions  in C++ 
 
+My blog page [libfbp.blogspot.com](http://libfbp.blogspot.com/2020/09/a-heterogeneous-data-frame-in-c.html)
+
 ## functions so far:
 
 [x] data_frame
