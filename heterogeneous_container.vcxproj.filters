@@ -28,7 +28,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="mtcars.csv">
+    <None Include="mpg.csv">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

@@ -66,9 +66,9 @@ int main() {
 
 	//std::cout << df << "\n\n";
 
-	auto csv = read_csv("mtcars.csv");
+	auto csv = read_csv("mpg.csv");
 
-	std::cout << csv["mpg"] << "\n\n";
+	//std::cout << csv["mpg"] << "\n\n";
 
 	std::cout << csv << "\n\n";
 

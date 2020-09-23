@@ -150,7 +150,7 @@
     <ClInclude Include="r_data_frame.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="mtcars.csv" />
+    <None Include="mpg.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

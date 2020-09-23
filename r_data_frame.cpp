@@ -104,7 +104,7 @@ namespace R {
 						break;
 					case token_t::broken_t:
 						throw std::runtime_error(
-							"broken record " + std::to_string(nline) + " field " + std::to_string(nfield) + " : " + field
+							file_path + " broken record on line " + std::to_string(nline) + " field " + std::to_string(nfield) + " : " + field
 						);
 						break;
 					}
@@ -143,12 +143,16 @@ std::ostream& operator<<(std::ostream& os, const R::variant_factor& vf) {
 
 std::ostream& operator<<(std::ostream& os, const R::data_frame& df) {
 	size_t sz{ 0 };
-	for (const auto& [key, vctr] : df) {
+	for (const auto& [key, vctr] : df) { // keys as column headings
 		os << '\t' << key;
 		sz = vctr.size();
 	}
 	std::cout << '\n';
-	for (size_t i{ 0 }; i < sz; ++i) {
+	for (const auto& [key, vctr] : df) { // column variant type index
+		os << '\t' << "(" << vctr.front().index() <<  ")";
+	}
+	std::cout << '\n';
+	for (size_t i{ 0 }; i < sz; ++i) { // records
 		std::cout << i;
 		for (const auto& [key, vctr] : df) {
 			std::visit([&os](auto&& arg) {os << '\t' << arg; }, vctr[i]);
