@@ -3,6 +3,7 @@
 #include <variant>
 #include <string>
 #include <vector>
+#include <map>
 #include <unordered_map>
 #include <set>
 #include <iostream>
@@ -62,13 +63,24 @@ namespace R {
 	using data_frame = std::unordered_map<std::string, variant_vector>;
 
 	/**
+	 * .
+	 */
+	using data_frame_map = std::map<std::string, data_frame>;
+
+	/**
 	 * @brief (R-ish) as_dates convert between string representations and objects of type r_date representing 
 	 * calendar dates.
 	 */
 	variant_vector as_dates(std::vector<std::string> dates);
-
+	
+	/**
+	 * .
+	 */
 	token_t r_typeof(std::string& lexeme);
 
+	/**
+	 * .
+	 */
 	data_frame read_csv(std::string file_path, bool has_header = true);
 
 	/**
@@ -78,27 +90,73 @@ namespace R {
 	 * @param decreasing	bool should the sort be increasing or decreasing?
 	 */
 	template<typename T>
-	void sort (variant_vector& x, bool decreasing = false) {
+	variant_vector sort (variant_vector& x, bool decreasing = false) {
+		variant_vector y(x);
 		// lambda compare functor that works with source variant type 
 		auto compare = [&](const basic_data_types& a, const basic_data_types& b) {
 			return std::get<T>(a) < std::get<T>(b);
 		};
 		if(decreasing) {
-			std::sort(x.rbegin(), x.rend(), compare);
+			std::sort(y.rbegin(), y.rend(), compare);
 		}
 		else {
-			std::sort(x.begin(), x.end(), compare);
+			std::sort(y.begin(), y.end(), compare);
 		}
+		return y;
+	}
+
+	/**
+	 * @brief (R-ish) sort (or order) a vector into ascending or descending order.
+	 *
+	 * @param x				variant vector of values to sort
+	 * @param decreasing	bool should the sort be increasing or decreasing?
+	 */
+	template<typename T>
+	variant_vector sort (variant_vector&& x, bool decreasing = false) {
+		variant_vector y(x);
+		// lambda compare functor that works with source variant type 
+		auto compare = [&](const basic_data_types& a, const basic_data_types& b) {
+			return std::get<T>(a) < std::get<T>(b);
+		};
+		if (decreasing) {
+			std::sort(y.rbegin(), y.rend(), compare);
+		}
+		else {
+			std::sort(y.begin(), y.end(), compare);
+		}
+		return y;
+	}
+
+	template<typename T>
+	data_frame_map split(data_frame& x, variant_vector& v) {
+		auto f = factor<T>(v);
 	}
 
 	/**
 	 * @brief (R-ish) unique returns a variant vector like x but with duplicate elements removed.
 	 * 
 	 * @param x		variant vector of r_string values to convert
-	 * @return		same sized variant vector of r_date
+	 * @return		variant vector of unique values
 	 */
 	template<typename T>
 	variant_vector unique(variant_vector& x) {
+		// lambda equality functor that works with source variant type
+		auto equals = [&](const basic_data_types& a, const basic_data_types& b) {
+			return std::get<T>(a) == std::get<T>(b);
+		};
+		variant_vector r{ x };
+		r.erase(std::unique(r.begin(), r.end(), equals), r.end());
+		return r;
+	}
+
+	/**
+	 * @brief (R-ish) unique returns a variant vector like x but with duplicate elements removed.
+	 *
+	 * @param x		variant vector of r_string values to convert
+	 * @return		variant vector of unique values
+	 */
+	template<typename T>
+	variant_vector unique(variant_vector&& x) {
 		// lambda equality functor that works with source variant type
 		auto equals = [&](const basic_data_types& a, const basic_data_types& b) {
 			return std::get<T>(a) == std::get<T>(b);
@@ -116,6 +174,24 @@ namespace R {
 	 */
 	template<typename T> 
 	std::pair<double, double> range(variant_vector& x) {
+		// lambda compare functor that works with source variant type 
+		auto compare = [&](const basic_data_types& a, const basic_data_types& b) {
+			return std::get<T>(a) < std::get<T>(b);
+		};
+		std::pair<double, double> r;
+		r.first = std::get<T>(*std::min_element(x.begin(), x.end(), compare));
+		r.second = std::get<T>(*std::max_element(x.begin(), x.end(), compare));
+		return r;
+	}
+
+	/**
+	 * @brief (R-ish) Range returns a pair containing the minimum and maximum of all the given argument
+	 *
+	 * @param x		numeric vector of values to summarize
+	 * @return		std::pair<double, double> min, max
+	 */
+	template<typename T>
+	std::pair<double, double> range(variant_vector&& x) {
 		// lambda compare functor that works with source variant type 
 		auto compare = [&](const basic_data_types& a, const basic_data_types& b) {
 			return std::get<T>(a) < std::get<T>(b);

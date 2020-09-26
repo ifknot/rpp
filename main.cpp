@@ -26,13 +26,13 @@ int main() {
 
 	//std::cout << d["name"] << "\n\n";
 
-	//data_frame df;
+	data_frame df;
 
-	//df["x"] = { 2, 1, 4, 9 };
-	//df["y"] = { 4, 1, 15, 80 };
-	//df["shape"] = { 'b', 'b', 'a', 'a' };
+	df["x"] = { 2, 1, 4, 9 };
+	df["y"] = { 4, 1, 15, 80 };
+	df["shape"] = { 'b', 'b', 'a', 'a' };
 
-	//std::cout << df << "\n\n";
+	std::cout << df << "\n\n";
 
 	//sort<r_integer>(df["y"]);
 
@@ -56,7 +56,7 @@ int main() {
 
 	//std::cout << unique<r_raw>(df["shape"]) << "\n\n";
 
-	//std::cout << factor<r_raw>(df["shape"]) << "\n\n";
+	std::cout << factor<r_raw>(df["shape"]) << "\n\n";
 
 	//std::cout << factor<r_double>(df["x"]) << "\n\n";
 
@@ -66,10 +66,12 @@ int main() {
 
 	//std::cout << df << "\n\n";
 
-	auto csv = read_csv("mpg.csv");
+	//auto mpg = read_csv("mpg.csv");
 
-	//std::cout << csv["mpg"] << "\n\n";
+	//std::cout << unique<r_string>(sort<r_string>(mpg["model"], true)) << "\n\n";
 
-	std::cout << csv << "\n\n";
+	//std::cout << sort<r_string>(unique<r_string>(mpg["model"])) << "\n\n";
+
+	//std::cout << mpg << "\n\n";
 
 }
