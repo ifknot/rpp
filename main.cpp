@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "r_data_frame.h"
+#include "R.h"
 
 using namespace R;
 
@@ -22,9 +22,25 @@ int main() {
 	auto money = std::get<r_double>(d["salary"][1]);
 
 	// but C++ is strongly typed so there we go
-	std::cout << std::get<r_string>(d["name"][1]) << " earns $" << money << "\n\n";
+	std::cout << std::get<r_string>(d["name"][1]) << " earns $" << money << '\n';
 
-	//std::cout << d["name"] << "\n\n";
+	if (money == range<r_double>(d["salary"]).first) {
+		std::cout << std::get<r_string>(d["name"][1]) << " earns the least" << "\n\n";
+	}
+
+	std::cout << d["name"] << "\n\n";
+
+	std::cout << sort<r_date>(d["start_date"]) << "\n\n";
+
+	auto salary_range = range<r_double>(d["salary"]);
+
+	variant_vector table{ salary_range.second };
+
+	auto found = match<r_double>(d["salary"], table);
+
+	if (found.size()) {
+		std::cout << std::get<r_string>(d["name"][found.front()]) << " earns the most $" << salary_range.second << "\n\n";
+	}
 
 	data_frame df;
 
@@ -34,17 +50,15 @@ int main() {
 
 	std::cout << df << "\n\n";
 
-	//sort<r_integer>(df["y"]);
+	std::cout << sort<r_integer>(df["y"]) << "\n\n";
 
-	//std::cout << df << "\n\n";
+	df["x"] = rescale<r_integer>(df["x"], std::pair(10, 200));
+	df["y"] = rescale<r_integer>(df["y"], std::pair(10, 300));
 
-	//rescale<r_integer>(df["x"], std::pair(0, 200));
-	//rescale<r_integer>(df["y"], std::pair(0, 300));
+	std::cout << df << "\n\n";
 
-	//std::cout << df << "\n\n";
-
-	//floor(df["x"]);
-	//floor(df["y"]);
+	std::cout << floor(df["x"]) << "\n\n";
+	std::cout << floor(df["y"]) << "\n\n";
 
 	//std::cout << df << "\n\n";
 
@@ -54,7 +68,7 @@ int main() {
 
 	//auto t = df["x"];
 
-	//std::cout << unique<r_raw>(df["shape"]) << "\n\n";
+	std::cout << unique<r_raw>(df["shape"]) << "\n\n";
 
 	std::cout << factor<r_raw>(df["shape"]) << "\n\n";
 
