@@ -1,7 +1,8 @@
 #pragma once
 
+#include "types.h"
 
-#include "R.h"
+#include <map>
 
 namespace R {
 

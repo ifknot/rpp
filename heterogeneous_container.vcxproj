@@ -152,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="as_dates.h" />
-    <ClInclude Include="data_frame.h" />
     <ClInclude Include="factor.h" />
     <ClInclude Include="floor.h" />
     <ClInclude Include="match.h" />
@@ -161,6 +160,7 @@
     <ClInclude Include="range.h" />
     <ClInclude Include="read_csv.h" />
     <ClInclude Include="rescale.h" />
+    <ClInclude Include="split.h" />
     <ClInclude Include="tokenize.h" />
     <ClInclude Include="types.h" />
     <ClInclude Include="unique.h" />

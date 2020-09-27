@@ -40,9 +40,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="data_frame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -77,6 +74,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="match.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="split.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
