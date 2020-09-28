@@ -6,10 +6,6 @@ bool operator > (const R::r_date& lhs, const R::r_date& rhs) {
 	return lhs.is_greater(rhs);
 }
 
-bool operator == (const R::r_date& lhs, const R::r_date& rhs) {
-	return lhs.is_equal(rhs);
-}
-
 std::ostream& operator << (std::ostream& os, const R::r_date& date) {
 	os << std::put_time(&date.tm, date.format.c_str());
 	return os;

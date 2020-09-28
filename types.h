@@ -21,6 +21,8 @@ namespace R {
 	using r_string = std::string;	// preferring string over character will help semantics in a C++ domain
 	using r_raw = char;				// or unint8_t?
 
+	static const r_integer NA = -1;	// R-ish implementation of not applicable (NA)
+
 	/**
 	 * This is the type to use if you have only dates, but no times, in your data.
 	 * functions: as_dates, diffdates, +, -, etc

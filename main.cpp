@@ -49,12 +49,14 @@ int main() {
 	df["shape"] = { 'b', 'b', 'a', 'a' };
 
 	std::cout << df << "\n\n";
+	
+	std::cout << match<r_raw>(df["shape"], variant_vector{'a', 'b', 'c'}) << "\n\n";
 
-	std::map<r_raw, data_frame> tdf;
+	//std::map<r_raw, data_frame> tdf;
 
-	tdf['a'] = df;
+	//tdf['a'] = df;
 
-	std::cout << tdf;
+	//std::cout << tdf;
 
 	//std::cout << sort<r_integer>(df["y"]) << "\n\n";
 

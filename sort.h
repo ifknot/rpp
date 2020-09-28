@@ -7,6 +7,7 @@ namespace R {
 	/**
 	 * @brief (R-ish) sort (or order) a vector into ascending or descending order.
 	 *
+	 * @tparam T			variant type
 	 * @param x				variant vector of values to sort
 	 * @param decreasing	bool should the sort be increasing or decreasing?
 	 * @return				variant_vector
@@ -30,6 +31,7 @@ namespace R {
 	/**
 	 * @brief (R-ish) sort (or order) a vector into ascending or descending order.
 	 *
+	 * @tparam T			variant type
 	 * @param x				variant vector of values to sort
 	 * @param decreasing	bool should the sort be increasing or decreasing?
 	 * @return				variant_vector

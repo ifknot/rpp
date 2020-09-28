@@ -9,6 +9,7 @@ namespace R {
 	*
 	* Usage rescale(x, to = c(0, 1), from = range(x))
 	*
+	* @tparam T		variant type
 	* @param x		numeric vector of values to manipulate
 	* @param to		output range pair
 	* @param range	optional input range pair - if not given, is calculated from the range of x.
@@ -31,6 +32,7 @@ namespace R {
 	*
 	* Usage rescale(x, to = c(0, 1), from = range(x))
 	*
+	* @tparam T		variant type
 	* @param x		numeric vector of values to manipulate
 	* @param to		output range pair
 	* @param range	optional input range pair - if not given, is calculated from the range of x.

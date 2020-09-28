@@ -7,15 +7,16 @@
 namespace R {
 
 	/**
-	 * match returns a vector of the positions of (first) matches of its first argument in its second.
-	 *
+	 * @brief (R-ish) match returns a vector of the positions of *first* matches of its first argument in its second.
+	 * @note NA = -1
+	 * 
 	 * @param x			vector of values to be matched.
 	 * @param table		vector of values to be matched against.
-	 * @return			std::vector<r_integer>
+	 * @return			variant_vector of r_integer indices where matches occur
 	 */
 	template<typename T>
-	std::vector<r_integer> match(variant_vector& x, variant_vector& table) {
-		std::vector<r_integer> v;
+	variant_vector match(variant_vector& x, variant_vector&& table) {
+		variant_vector v;
 		for (const auto& a : table) {
 			auto it = std::find_if(
 				x.begin(), 
@@ -27,20 +28,24 @@ namespace R {
 			if (it != x.end()) {
 				v.push_back(static_cast<r_integer>(distance(x.begin(), it)));
 			}
+			else {
+				v.push_back(NA);
+			}
 		}
 		return v;
 	}
 
 	/**
-	 * match returns a vector of the positions of (first) matches of its first argument in its second.
+	 * @brief (R-ish) match returns a vector of the positions of (first) matches of its first argument in its second.
+	 * @note NA = -1
 	 *
 	 * @param x			vector of values to be matched.
 	 * @param table		vector of values to be matched against.
-	 * @return			std::vector<r_integer>
+	 * @return			variant_vector of r_integer indices where matches occur
 	 */
 	template<typename T>
-	std::vector<r_integer> match(variant_vector&& x, variant_vector&& table) {
-		std::vector<r_integer> v;
+	variant_vector match(variant_vector&& x, variant_vector&& table) {
+		variant_vector v;
 		for (const auto& a : table) {
 			auto it = std::find_if(
 				x.begin(),
@@ -51,6 +56,9 @@ namespace R {
 			);
 			if (it != x.end()) {
 				v.push_back(static_cast<r_integer>(distance(x.begin(), it)));
+			}
+			else {
+				v.push_back(NA);
 			}
 		}
 		return v;

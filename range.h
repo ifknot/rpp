@@ -10,6 +10,7 @@ namespace R {
 	/**
 	 * @brief (R-ish) Range returns a pair containing the minimum and maximum of all the given argument
 	 *
+	 * @tparam T	variant type
 	 * @param x		numeric vector of values to summarize
 	 * @return		std::pair<double, double> min, max
 	 */
@@ -28,6 +29,7 @@ namespace R {
 	/**
 	 * @brief (R-ish) Range returns a pair containing the minimum and maximum of all the given argument
 	 *
+	 * @tparam T	variant type
 	 * @param x		numeric vector of values to summarize
 	 * @return		std::pair<double, double> min, max
 	 */

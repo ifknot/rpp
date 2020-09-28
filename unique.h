@@ -7,6 +7,7 @@ namespace R {
 	/**
 	 * @brief (R-ish) unique returns a variant vector like x but with duplicate elements removed.
 	 *
+	 * @tparam T	variant type
 	 * @param x		variant vector of r_string values to convert
 	 * @return		variant vector of unique values
 	 */
@@ -24,6 +25,7 @@ namespace R {
 	/**
 	 * @brief (R-ish) unique returns a variant vector like x but with duplicate elements removed.
 	 *
+	 * @tparam T	variant type
 	 * @param x		variant vector of r_string values to convert
 	 * @return		variant vector of unique values
 	 */
