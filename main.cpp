@@ -4,6 +4,9 @@
 
 using namespace R;
 
+// TODO: in (return r_logical)
+// TODO: which (only accept vv of r_logical
+
 int main() {
 
 	std::cout << "heterogeneous container\n\n";
@@ -19,13 +22,13 @@ int main() {
 	std::cout << d << '\n';
 
 	// accessing data does need prior knowledge of the column data type
-	auto money = std::get<r_double>(d["salary"][1]);
+	auto money = std::get<_dbl>(d["salary"][1]);
 
 	// but C++ is strongly typed so there we go
-	std::cout << std::get<r_string>(d["name"][1]) << " earns $" << money << '\n';
+	std::cout << std::get<_str>(d["name"][1]) << " earns $" << money << '\n';
 
 	if (money == range<r_double>(d["salary"]).first) {
-		std::cout << std::get<r_string>(d["name"][1]) << " earns the least" << "\n\n";
+		std::cout << std::get<_str>(d["name"][1]) << " earns the least" << "\n\n";
 	}
 
 	std::cout << d["name"] << "\n\n";
@@ -37,7 +40,7 @@ int main() {
 	auto found = match<r_double>(d["salary"], { salary_range.second });
 
 	if (found.size()) {
-		std::cout << std::get<r_string>(d["name"][std::get<r_integer>(found.front())]) << " earns the most $" << salary_range.second << "\n\n";
+		std::cout << std::get<_str>(d["name"][std::get<r_integer>(found.front())]) << " earns the most $" << salary_range.second << "\n\n";
 	}
 
 	data_frame df;
@@ -45,10 +48,11 @@ int main() {
 	df["x"] = { 2, 1, 4, 9 };
 	df["y"] = { 4, 1, 15, 80 };
 	df["shape"] = { 'b', 'b', 'a', 'a' };
+	df["bool"] = { r_logical{true} };
 
 	std::cout << df << "\n\n";
 	
-	std::cout << match<r_raw>(df["shape"], variant_vector{'a', 'b', 'c'}) << "\n\n";
+	std::cout << match<r_raw>(df["shape"], {'a', 'b', 'c'}) << "\n\n";
 
 	//std::map<r_raw, data_frame> tdf;
 

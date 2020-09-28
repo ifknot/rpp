@@ -23,7 +23,7 @@ namespace R {
 	static const r_integer NA = -1;	// R-ish implementation of not applicable (NA)
 
 	/**
-	 * separate logical type to prevent C++ silently coercing bool into integer
+	 * separate logical type to prevent C++ implicitly (ie silently) coercing bool to integer!
 	 */
 	struct r_logical {
 		bool boolean;
@@ -62,24 +62,28 @@ namespace R {
 	}
 	*/
 
-	enum ordinal_t { first = 1, second, third, fourth, fifth };
-
 	/**
 	 * define a variant of the R-ish PODs
 	 */
-	using basic_data_types = std::variant<r_raw, r_integer, r_double, r_string, r_logical, r_date>;
+	using data_variants = std::variant<r_raw, r_integer, r_double, r_string, r_logical, r_date>;
 
 	/**
-	 * convert PODs into a string name
+	 * std:get can use the type or index e.g. std::get<char> or std::get<0>
+	 * using the data_type enumeration prevents errors from using the wrong index
+	 */
+	enum data_types {_raw, _int, _dbl, _str, _bool, _date};
+
+	/**
+	 * convert PODs into their string name
 	 */
 	static const std::array<std::string, 6> index_to_type{ "raw", "int", "dbl", "str", "bool", "date" };
 
 	/**
 	 * @brief in R vectors can store any variable type.
 	 *
-	 * @note unlike R variant_vectors are limited to the basic_data_types defined above
+	 * @note unlike R, variant_vectors are limited to the data_variants defined above
 	 */
-	using variant_vector = std::vector<basic_data_types>;
+	using variant_vector = std::vector<data_variants>;
 
 	/**
 	 * @brief In R factors are data objects used to categorize data and store it as levels.

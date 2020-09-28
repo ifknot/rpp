@@ -21,7 +21,7 @@ namespace R {
 			auto it = std::find_if(
 				x.begin(), 
 				x.end(), 
-				[&](const basic_data_types& b) { 
+				[&](const data_variants& b) { 
 					return std::get<T>(a) == std::get<T>(b); 
 				}
 			);
@@ -50,7 +50,7 @@ namespace R {
 			auto it = std::find_if(
 				x.begin(),
 				x.end(),
-				[&](const basic_data_types& b) { 
+				[&](const data_variants& b) { 
 					return std::get<T>(a) == std::get<T>(b); 
 				}
 			);
