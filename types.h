@@ -7,6 +7,7 @@
 #include <unordered_map>
 #include <ctime>
 #include <optional>
+#include <array>
 
 namespace R {
 
@@ -41,8 +42,8 @@ namespace R {
 			return std::mktime(&lhs_tm) > std::mktime(&rhs_tm);
 		}
 
-		//  operator+=
-		//  operator-=
+		//  TODO: operator+=
+		//  TODO: operator-=
 
 	};
 
@@ -59,6 +60,11 @@ namespace R {
 	 * define a variant of the R-ish PODs
 	 */
 	using basic_data_types = std::variant<r_raw, r_integer, r_double, r_string, r_date>;
+
+	/**
+	 * convert PODs into a string name
+	 */
+	static const std::array<std::string, 5> index_to_type{ "raw", "int", "dbl", "str", "date" };
 
 	/**
 	 * @brief in R vectors can store any variable type.

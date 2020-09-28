@@ -17,6 +17,7 @@ namespace R {
 	template<typename T>
 	std::map<T, data_frame> split(data_frame& x, variant_vector& v) {
 		auto f = factor<T>(v);
+
 		return std::map<T, data_frame>;
 	}
 
