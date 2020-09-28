@@ -15,13 +15,19 @@ namespace R {
 	 *  R has basic types  "logical", "integer", "double", "complex", "character" and "raw"
 	 *  but in a C++ domain using character instead of string could be confusing
 	 */
-	using r_logical = bool;
 	using r_integer = int;			// int32_t
 	using r_double = double;		// float, double, long double
 	using r_string = std::string;	// preferring string over character will help semantics in a C++ domain
 	using r_raw = char;				// or unint8_t?
 
 	static const r_integer NA = -1;	// R-ish implementation of not applicable (NA)
+
+	/**
+	 * separate logical type to prevent C++ silently coercing bool into integer
+	 */
+	struct r_logical {
+		bool boolean;
+	};
 
 	/**
 	 * This is the type to use if you have only dates, but no times, in your data.
@@ -61,12 +67,12 @@ namespace R {
 	/**
 	 * define a variant of the R-ish PODs
 	 */
-	using basic_data_types = std::variant<r_raw, r_integer, r_double, r_string, r_date>;
+	using basic_data_types = std::variant<r_raw, r_integer, r_double, r_string, r_logical, r_date>;
 
 	/**
 	 * convert PODs into a string name
 	 */
-	static const std::array<std::string, 5> index_to_type{ "raw", "int", "dbl", "str", "date" };
+	static const std::array<std::string, 6> index_to_type{ "raw", "int", "dbl", "str", "bool", "date" };
 
 	/**
 	 * @brief in R vectors can store any variable type.
