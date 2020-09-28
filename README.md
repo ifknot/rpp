@@ -1,4 +1,4 @@
-# rpp
+# R++
 ![disk label](https://cldup.com/dRGROyJWj7.jpg)
 
 An R inspired heterogeneous data frame, factor and some handy functions  in C++ 
