@@ -16,7 +16,7 @@ namespace R {
 	variant_vector sort (variant_vector& x, bool decreasing = false) {
 		variant_vector v{ x };
 		// lambda compare functor that works with source variant type 
-		auto compare = [&](const data_variants& a, const data_variants& b) {
+		auto compare = [&](const r_type& a, const r_type& b) {
 			return std::get<T>(a) > std::get<T>(b);
 		};
 		if (decreasing) {
@@ -40,7 +40,7 @@ namespace R {
 	variant_vector sort (variant_vector&& x, bool decreasing = false) {
 		variant_vector v{ x };
 		// lambda compare functor that works with source variant type 
-		auto compare = [&](const data_variants& a, const data_variants& b) {
+		auto compare = [&](const r_type& a, const r_type& b) {
 			return std::get<T>(a) < std::get<T>(b);
 		};
 		if (decreasing) {

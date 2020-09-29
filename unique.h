@@ -14,7 +14,7 @@ namespace R {
 	template<typename T>
 	variant_vector unique(variant_vector& x) {
 		// lambda equality functor that works with source variant type
-		auto equals = [&](const data_variants& a, const data_variants& b) {
+		auto equals = [&](const r_type& a, const r_type& b) {
 			return std::get<T>(a) == std::get<T>(b);
 		};
 		variant_vector v{ x };
@@ -32,7 +32,7 @@ namespace R {
 	template<typename T>
 	variant_vector unique(variant_vector&& x) {
 		// lambda equality functor that works with source variant type
-		auto equals = [&](const data_variants& a, const data_variants& b) {
+		auto equals = [&](const r_type& a, const r_type& b) {
 			return std::get<T>(a) == std::get<T>(b);
 		};
 		variant_vector v{ x };

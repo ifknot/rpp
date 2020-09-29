@@ -155,6 +155,7 @@
     <ClInclude Include="factor.h" />
     <ClInclude Include="floor.h" />
     <ClInclude Include="match.h" />
+    <ClInclude Include="match_all.h" />
     <ClInclude Include="overloads.h" />
     <ClInclude Include="R.h" />
     <ClInclude Include="range.h" />

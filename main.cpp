@@ -5,7 +5,7 @@
 using namespace R;
 
 // TODO: in (return r_logical)
-// TODO: which (only accept vv of r_logical
+// TODO: which (only accept vv of r_logical)
 
 int main() {
 
@@ -48,11 +48,11 @@ int main() {
 	df["x"] = { 2, 1, 4, 9 };
 	df["y"] = { 4, 1, 15, 80 };
 	df["shape"] = { 'b', 'b', 'a', 'a' };
-	df["bool"] = { r_logical{true} };
+	df["bool"] = { TRUE, TRUE, FALSE, FALSE };
 
 	std::cout << df << "\n\n";
 	
-	std::cout << match<r_raw>(df["shape"], {'a', 'b', 'c'}) << "\n\n";
+	std::cout << match_all<r_raw>(df["shape"], {'a', 'b', 'c'}) << "\n\n";
 
 	//std::map<r_raw, data_frame> tdf;
 
@@ -90,12 +90,14 @@ int main() {
 
 	//std::cout << df << "\n\n";
 
-	//auto mpg = read_csv("mpg.csv");
+	auto mpg = read_csv("mpg.csv");
+
+	mpg["year"] = as_dates({ mpg["year"] }, "%Y");
 
 	//std::cout << unique<r_string>(sort<r_string>(mpg["model"], true)) << "\n\n";
 
 	//std::cout << sort<r_string>(unique<r_string>(mpg["model"])) << "\n\n";
 
-	//std::cout << mpg << "\n\n";
+	std::cout << mpg << "\n\n";
 
 }

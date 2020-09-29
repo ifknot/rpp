@@ -7,7 +7,7 @@ bool operator > (const R::r_date& lhs, const R::r_date& rhs) {
 }
 
 std::ostream& operator<<(std::ostream& os, const R::r_logical& b) {
-	os << std::boolalpha << b.boolean;
+	os << ((b.boolean) ?"TRUE" :"FALSE");
 	return os;
 }
 
@@ -36,7 +36,7 @@ std::ostream& operator << (std::ostream& os, const R::data_frame& df) {
 	}
 	std::cout << '\n';
 	for (const auto& [key, vctr] : df) { // column variant type index of the first item in the column vector
-		os << '\t' << "(" << R::index_to_type[vctr.front().index()] << ")";
+		os << '\t' << "(" << R::index_to_string[vctr.front().index()] << ")";
 	}
 	std::cout << '\n';
 	for (size_t i{ 0 }; i < sz; ++i) { // records

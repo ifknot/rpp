@@ -4,6 +4,7 @@
 #include "overloads.h"
 #include "tokenize.h"
 #include "match.h"
+#include "match_all.h"
 #include "sort.h"
 #include "unique.h"
 #include "factor.h"

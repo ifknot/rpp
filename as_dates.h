@@ -2,8 +2,6 @@
 
 #include "types.h"
 
-#include "conversions.h"
-
 namespace R {
 
 	/**
@@ -11,8 +9,9 @@ namespace R {
 	* calendar dates.
 	* 
 	* @param dates
+	* @param format	- an override std::get_time compatible format string 
 	*/
-	variant_vector as_dates(const std::vector<std::string>& dates, const std::string format = "%Y-%m-%d");
+	variant_vector as_dates(const variant_vector& dates, std::string format = "");
 
 	/**
 	* @brief (R-ish) as_dates convert between string representations and objects of type r_date representing
@@ -20,6 +19,7 @@ namespace R {
 	* 
 	* @param dates 
 	*/
-	variant_vector as_dates(std::vector<std::string>&& dates, const std::string format = "%Y-%m-%d");
+	variant_vector as_dates(variant_vector&& dates, std::string format = "");
+
 	
 }

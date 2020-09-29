@@ -79,5 +79,8 @@
     <ClInclude Include="split.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="match_all.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

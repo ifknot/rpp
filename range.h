@@ -17,7 +17,7 @@ namespace R {
 	template<typename T>
 	std::pair<T, T> range(variant_vector& x) {
 		// lambda compare functor that works with source variant type 
-		auto compare = [&](const data_variants& a, const data_variants& b) {
+		auto compare = [&](const r_type& a, const r_type& b) {
 			return std::get<T>(b) > std::get<T>(a);
 		};
 		std::pair<double, double> p;
@@ -36,7 +36,7 @@ namespace R {
 	template<typename T>
 	std::pair<T, T> range(variant_vector&& x) {
 		// lambda compare functor that works with source variant type 
-		auto compare = [&](const data_variants& a, const data_variants& b) {
+		auto compare = [&](const r_type& a, const r_type& b) {
 			return std::get<T>(b) > std::get<T>(a);
 		};
 		std::pair<double, double> p;
