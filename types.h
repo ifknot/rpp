@@ -24,8 +24,6 @@ namespace R {
 	using r_string = std::string;	// preferring string over character will help semantics in a C++ domain
 	using r_raw = char;				// or unint8_t?
 
-	static const r_integer NA = -1;	// R-ish implementation of not applicable (NA)
-
 	/**
 	 * separate logical type to prevent C++ implicitly (i.e. silently) coercing bool to integer!
 	 */
@@ -60,12 +58,37 @@ namespace R {
 
 	};
 
-	/*
-	struct POSIXlt {
+	/**
+	 * the (signed) number of seconds since the beginning of 1970 as a numeric
+	 */
+	using r_POSIXct = std::time_t;	
 
+	/**
+	 * closer to human-readable form of date & time
+	 */
+	struct r_POSIXlt {
 
-	}
-	*/
+		std::tm tm;
+		std::string format{ "%Y-%m-%d %T" };
+
+		bool is_equal(const r_date& rhs) const {
+			auto rhs_tm = rhs.tm;
+			auto lhs_tm = tm;
+			return std::mktime(&lhs_tm) == std::mktime(&rhs_tm);
+		}
+
+		bool is_greater (const r_date& rhs) const {
+			auto rhs_tm = rhs.tm;
+			auto lhs_tm = tm;
+			return std::mktime(&lhs_tm) > std::mktime(&rhs_tm);
+		}
+
+	};
+
+	/**
+	 * R-ish implementation of not applicable (NA)
+	 */
+	static const r_integer NA = -1;	
 
 	/**
 	 * define a variant of the R-ish PODs

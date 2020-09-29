@@ -16,6 +16,7 @@ namespace R {
 				break;
 			case _int:
 				d = std::to_string(std::get<_int>(date));
+				format = (format == "") ? "%Y" : format;	// int defaults to year
 				break;
 			default:
 				throw std::invalid_argument(std::string(__func__) + " invalid argument " + index_to_string[date.index()]);
@@ -42,6 +43,7 @@ namespace R {
 				break;
 			case _int:
 				d = std::to_string(std::get<_int>(date));
+				format = (format == "") ? "%Y" : format;	// int defaults to year
 				break;
 			default:
 				throw std::invalid_argument(std::string(__func__) + " invalid argument " + index_to_string[date.index()]);

@@ -92,7 +92,13 @@ int main() {
 
 	auto mpg = read_csv("mpg.csv");
 
-	mpg["year"] = as_dates({ mpg["year"] }, "%Y");
+	try {
+		//mpg["year"] = as_dates({ mpg["displ"] });
+		mpg["year"] = as_dates({ mpg["year"] });
+	}
+	catch (const std::exception& e) {
+		std::cerr << e.what() << "\n\n";
+	}
 
 	//std::cout << unique<r_string>(sort<r_string>(mpg["model"], true)) << "\n\n";
 
