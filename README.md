@@ -1,7 +1,9 @@
 # R++
-![disk label](https://cldup.com/dRGROyJWj7.jpg)
+![scrabble_data](https://cldup.com/dRGROyJWj7.jpg)
 
-An R inspired heterogeneous data frame, factor and some handy functions  in C++ 
+An R *inspired* toolkit of heterogeneous data types and statistical functions written in C++.
+
+Designed to offer *familiar enough* semantics with their R language counterparts to facilitate R knowledge and skills transfer into the C++ domain.
 
 My blog page [libfbp.blogspot.com](http://libfbp.blogspot.com/2020/09/a-heterogeneous-data-frame-in-c.html)
 
