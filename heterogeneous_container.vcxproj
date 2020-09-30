@@ -144,7 +144,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="as_dates.cpp" />
+    <ClCompile Include="head.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="names.cpp" />
     <ClCompile Include="read_csv.cpp" />
     <ClCompile Include="sort.h" />
     <ClCompile Include="overloads.cpp" />
@@ -152,8 +154,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="as_dates.h" />
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="containers.h" />
     <ClInclude Include="factor.h" />
     <ClInclude Include="floor.h" />
+    <ClInclude Include="head.h" />
+    <ClInclude Include="names.h" />
     <ClInclude Include="match.h" />
     <ClInclude Include="match_all.h" />
     <ClInclude Include="overloads.h" />
@@ -162,6 +168,7 @@
     <ClInclude Include="read_csv.h" />
     <ClInclude Include="rescale.h" />
     <ClInclude Include="split.h" />
+    <ClInclude Include="tail.h" />
     <ClInclude Include="tokenize.h" />
     <ClInclude Include="types.h" />
     <ClInclude Include="unique.h" />

@@ -2,18 +2,12 @@
 
 #include <variant>
 #include <string>
-#include <vector>
-#include <map>
-#include <unordered_map>
-#include <ctime>
-#include <optional>
+#include <ctime>b
 #include <array>
 
+#include "constants.h"
+
 namespace R {
-
-#define TRUE R::r_logical{true}
-
-#define FALSE R::r_logical{false}
 
 	/**
 	 *  R has basic types  "logical", "integer", "double", "complex", "character" and "raw"
@@ -102,40 +96,15 @@ namespace R {
 	enum r_index {_raw, _int, _dbl, _str, _bool, _date};
 
 	/**
-	 * syntactic sugar
-	 */
-	enum ordinal_t { first = 1, second, third, fourth, fifth };
-
-	/**
 	 * convert PODs into their string name
 	 */
 	static const std::array<std::string, 6> index_to_string{ "raw", "int", "dbl", "str", "bool", "date" };
 
 	/**
-	 * @brief in R vectors can store any variable type.
-	 *
-	 * @note unlike R, variant_vectors are limited to the data_variants defined above
+	 * syntactic sugar
 	 */
-	using variant_vector = std::vector<r_type>;
+	enum ordinal_t { first = 1, second, third, fourth, fifth };
 
-	/**
-	 * @brief In R factors are data objects used to categorize data and store it as levels.
-	 *
-	 * Stored as a pair of integer and string variant vectors they can be used to convert unique values into
-	 * ordinal integers.
-	 * @note unlike R factors can not be stored in a data_frame but either of the pairs variant vectors can be.
-	 * The first variant_vector of the pair is the ordinal integers, the second is the levels.
-	 */
-	using variant_factor = std::pair<variant_vector, variant_vector>;
 
-	/**
-	 * As per R language definition the following are the characteristics of a data frame
-	 *
-	 * - The column names should be non-empty.
-	 * - The row names should be unique.
-	 * - The data stored in a data frame can be of numeric, factor or character type.
-	 * - Each column should contain same number of data items.
-	 */
-	using data_frame = std::unordered_map<std::string, variant_vector>;
 
 }

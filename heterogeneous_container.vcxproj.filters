@@ -33,6 +33,12 @@
     <ClCompile Include="overloads.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="names.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="head.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="mpg.csv">
@@ -80,6 +86,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="match_all.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="names.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="containers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="head.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tail.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

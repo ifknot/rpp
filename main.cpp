@@ -6,6 +6,8 @@ using namespace R;
 
 // TODO: in (return r_logical)
 // TODO: which (only accept vv of r_logical)
+// TODO: head
+// TODO: tail
 
 int main() {
 
@@ -92,6 +94,8 @@ int main() {
 
 	auto mpg = read_csv("mpg.csv");
 
+	//std::cout << names(mpg) << "\n\n";
+
 	try {
 		//mpg["year"] = as_dates({ mpg["displ"] });
 		mpg["year"] = as_dates({ mpg["year"] });
@@ -104,6 +108,6 @@ int main() {
 
 	//std::cout << sort<r_string>(unique<r_string>(mpg["model"])) << "\n\n";
 
-	std::cout << mpg << "\n\n";
+	//std::cout << mpg << "\n\n";
 
 }

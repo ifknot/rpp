@@ -1,7 +1,9 @@
 #pragma once
 
 #include "types.h"
+#include "containers.h"
 #include "overloads.h"
+#include "names.h"
 #include "tokenize.h"
 #include "match.h"
 #include "match_all.h"
@@ -13,5 +15,7 @@
 #include "floor.h"
 #include "as_dates.h"
 #include "read_csv.h"
+#include "head.h"
+#include "tail.h"
 
 
