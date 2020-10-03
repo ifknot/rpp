@@ -108,6 +108,8 @@ int main() {
 
 	//std::cout << sort<r_string>(unique<r_string>(mpg["model"])) << "\n\n";
 
-	//std::cout << mpg << "\n\n";
+	std::cout << mpg << "\n\n";
+
+	std::cout << head(mpg);
 
 }
