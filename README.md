@@ -1,4 +1,4 @@
-# R++ <deprecated>
+# R++_old (deprecated)
 
 *I'm not sure that variants are the way to go, rather templated containers in the new R++ repo*
 An R *inspired* toolkit of heterogeneous data types and statistical functions written in C++.
