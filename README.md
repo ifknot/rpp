@@ -1,6 +1,6 @@
-# R++
-![scrabble_data](https://cldup.com/dRGROyJWj7.jpg)
+# R++ <deprecated>
 
+*I'm not sure that variants are the way to go, rather templated containers in the new R++ repo*
 An R *inspired* toolkit of heterogeneous data types and statistical functions written in C++.
 
 Designed to offer *familiar enough* semantics with their R language counterparts to facilitate R knowledge and skills transfer into the C++ domain.
