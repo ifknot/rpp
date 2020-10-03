@@ -150,6 +150,7 @@
     <ClCompile Include="read_csv.cpp" />
     <ClCompile Include="sort.h" />
     <ClCompile Include="overloads.cpp" />
+    <ClCompile Include="tail.cpp" />
     <ClCompile Include="tokenize.cpp" />
   </ItemGroup>
   <ItemGroup>

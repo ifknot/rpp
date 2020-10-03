@@ -110,6 +110,6 @@ int main() {
 
 	std::cout << mpg << "\n\n";
 
-	std::cout << head(mpg);
+	std::cout << tail(mpg);
 
 }
