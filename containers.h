@@ -10,7 +10,8 @@ namespace R {
 	/**
 	 * @brief in R vectors can store any variable type.
 	 *
-	 * @note unlike R, variant_vectors are limited to the data_variants defined above
+	 * @note variant_vectors elements are limited to the variants defined in r_types
+	 * @note unlike R, it is not possible to add names to indices
 	 */
 	using variant_vector = std::vector<r_type>;
 
@@ -25,7 +26,15 @@ namespace R {
 	using variant_factor = std::pair<variant_vector, variant_vector>;
 
 	/**
-	 * As per R language definition the following are the characteristics of a data frame
+	 * @brief in R a list is a generic vector containing r_types or other containers
+	 *
+	 * @note from a design perspective rather using r_type variant as the index, a permit wider range of types T
+	 */
+	template<typename T, typename U>
+	using variant_list = std::unordered_map<T, U>;
+
+	/**
+	 * @brief As per R language definition the following are the characteristics of a data frame
 	 *
 	 * - The column names should be non-empty.
 	 * - The row names should be unique.

@@ -3,6 +3,7 @@
 #include "containers.h"
 
 #include <map>
+#include <string>
 
 namespace R {
 
@@ -15,10 +16,13 @@ namespace R {
 	 * @return
 	 */
 	template<typename T>
-	std::map<T, data_frame> split(data_frame& x, variant_vector& v) {
+	variant_list<std::string, data_frame> split(data_frame& x, variant_vector& v) {
+		variant_list<T, data_frame> tdf;
 		auto f = factor<T>(v);			// define the groups by the factor levels
+		for (const auto& level : f.second) {
 
-		return std::map<T, data_frame>;
+		}
+		return tdf;
 	}
 
 }
