@@ -25,7 +25,7 @@ namespace R {
 	 * The 6 basic R-ish data types (raw, character, numeric, integer, logical, complex
 	 * @note to avoid confusion between character and string in C++ domain "string_t" is used
 	 */
-	using r_raw = unsigned char;
+	using r_raw = char;
 	using r_string = std::string;
 	using r_numeric = double;
 	using r_integer = int;
@@ -67,7 +67,7 @@ namespace R {
 	};
 
 	/**
-	 * define a variant of the R-ish PODs
+	 * define a variant of the 7 R-ish data types
 	 */
 	using r_type = std::variant<r_raw, r_integer, r_numeric, r_string, r_logical, r_complex, r_date>;
 
@@ -75,12 +75,12 @@ namespace R {
 	 * std:get can use the type or index e.g. std::get<char> or std::get<0>
 	 * using the data_type enumeration prevents errors from using the wrong index
 	 */
-	enum r_index {_raw, _int, _num, _str, _bool, _cmplx, _date};
+	enum r_index {_raw, _int, _num, _str, _bool, _cplx, _date};
 
 	/**
 	 * convert PODs into their string name
 	 */
-	static const std::array<std::string, 7> index_to_string{ "raw", "int", "num", "str", "bool", "cmplx", "date" };
+	static const std::array<std::string, 7> index_to_string{ "raw", "int", "num", "str", "bool", "cplx", "date" };
 
 	/**
 	 * syntactic sugar

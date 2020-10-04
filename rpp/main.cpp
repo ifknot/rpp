@@ -29,7 +29,7 @@ int main() {
 	// but C++ is strongly typed so there we go
 	std::cout << std::get<_str>(d["name"][1]) << " earns $" << money << '\n';
 
-	if (money == range<r_double>(d["salary"]).first) {
+	if (money == range<r_numeric>(d["salary"]).first) {
 		std::cout << std::get<_str>(d["name"][1]) << " earns the least" << "\n\n";
 	}
 
@@ -37,9 +37,9 @@ int main() {
 
 	std::cout << sort<r_date>(d["start_date"]) << "\n\n";
 
-	auto salary_range = range<r_double>(d["salary"]);
+	auto salary_range = range<r_numeric>(d["salary"]);
 
-	auto found = match<r_double>(d["salary"], { salary_range.second });
+	auto found = match<r_numeric>(d["salary"], { salary_range.second });
 
 	if (found.size()) {
 		std::cout << std::get<_str>(d["name"][std::get<r_integer>(found.front())]) << " earns the most $" << salary_range.second << "\n\n";

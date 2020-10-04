@@ -156,7 +156,7 @@
   <ItemGroup>
     <ClInclude Include="as_dates.h" />
     <ClInclude Include="constants.h" />
-    <ClInclude Include="containers.h" />
+    <ClInclude Include="data_structures.h" />
     <ClInclude Include="factor.h" />
     <ClInclude Include="floor.h" />
     <ClInclude Include="head.h" />
@@ -171,7 +171,7 @@
     <ClInclude Include="split.h" />
     <ClInclude Include="tail.h" />
     <ClInclude Include="tokenize.h" />
-    <ClInclude Include="types.h" />
+    <ClInclude Include="data_types.h" />
     <ClInclude Include="unique.h" />
   </ItemGroup>
   <ItemGroup>
