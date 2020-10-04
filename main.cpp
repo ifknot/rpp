@@ -24,7 +24,7 @@ int main() {
 	std::cout << d << '\n';
 
 	// accessing data does need prior knowledge of the column data type
-	auto money = std::get<_dbl>(d["salary"][1]);
+	auto money = std::get<_num>(d["salary"][1]);
 
 	// but C++ is strongly typed so there we go
 	std::cout << std::get<_str>(d["name"][1]) << " earns $" << money << '\n';
