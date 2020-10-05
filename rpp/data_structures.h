@@ -27,17 +27,7 @@ namespace R {
 	 * @note unlike R factors can not be stored in a data_frame but either of the pairs variant vectors can be.
 	 * The first variant_vector of the pair is the ordinal integers, the second is the levels.
 	 */
-	using variant_factor = std::pair<variant_vector, variant_vector>;
-
-	/**
-	 * @brief in R a list can store multiple variables of multiple types i.e. they are type heterogeneous 
-	 * 
-	 * R-ish vectors can be created using list initialization (curly braces), copy or =
-	 *
-	 * @note from a design perspective rather using r_type variant as the index, permit wider range of types T
-	 */
-	template<typename T, typename U>
-	using variant_list = std::unordered_map<T, U>;
+	using variant_factor = std::pair<variant_vector, variant_vector>;	
 
 	/**
 	 * @brief As per R language definition the following are the characteristics of an R-ish data frame:
@@ -50,5 +40,8 @@ namespace R {
 	 * @note *none* of these characteristics are checked for.
 	 */
 	using data_frame = std::unordered_map<std::string, variant_vector>;
+
+
+	using variant_list = std::unordered_map<std::string, data_frame>;
 
 }

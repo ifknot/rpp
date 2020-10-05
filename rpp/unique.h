@@ -27,8 +27,7 @@ namespace R {
 		for (const auto& v : x) {
 			s.emplace(std::get<T>(v));
 		}
-		variant_vector v(s.begin(), s.end());
-		return v;
+		return variant_vector (s.begin(), s.end());
 	}
 
 	/**
@@ -47,39 +46,7 @@ namespace R {
 		for (const auto& v : x) {
 			s.emplace(std::get<T>(v));
 		}
-		variant_vector v(s.begin(), s.end());
-		return v;
+		return variant_vector (s.begin(), s.end());
 	}
 
 }
-
-/*
-
-switch (x[0].index()) {
-	case _num:
-	{	// lambda equality function for fp values as per "The art of computer programming" by Knuth
-		auto almost_equals = [&](const r_type& aa, const r_type& bb) {
-			std::cout << aa.index() << ',' << bb.index() <<std::endl;
-			assert(aa.index() == _num && bb.index() == _num);
-			auto a{ std::get<r_numeric>(aa) };
-			auto b{ std::get<r_numeric>(bb) };
-			auto epsilon = std::numeric_limits<double>::epsilon();
-			return fabs(a - b) <= ((fabs(a) < fabs(b) ? fabs(b) : fabs(a)) * epsilon);
-		};
-		variant_vector v{ x };
-		v.erase(std::unique(v.begin(), v.end(), almost_equals), v.end());
-		return v;
-	}
-	default:
-	{	// lambda equality functor that works with non-fp variant type
-		auto equals = [&](const r_type& a, const r_type& b) {
-			assert(a.index() == b.index());
-			return std::get<T>(a) == std::get<T>(b);
-		};
-		variant_vector v{ x };
-		v.erase(std::unique(v.begin(), v.end(), equals), v.end());
-		return v;
-	}
-}
-
-*/

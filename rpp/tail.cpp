@@ -7,9 +7,9 @@ namespace R {
 
 
 	variant_vector tail(const variant_vector& x, size_t n) {
-		variant_vector v(x.rbegin(), (x.size() < n) ? x.rend() : x.rbegin() + 6);
-		std::reverse(v.begin(), v.end());
-		return v;
+		variant_vector vv(x.rbegin(), (x.size() < n) ? x.rend() : x.rbegin() + 6);
+		std::reverse(vv.begin(), vv.end());
+		return vv;
 	}
 
 	data_frame tail(const data_frame& x, size_t n) {

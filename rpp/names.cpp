@@ -5,11 +5,11 @@ namespace R {
 
 
 	variant_vector names(data_frame& x) {
-		variant_vector v;
+		variant_vector vv;
 		for (const auto& [key, vctr] : x) { // keys as column headings
-			v.push_back(key);
+			vv.push_back(key);
 		}
-		return v;
+		return vv;
 	}
 
 }

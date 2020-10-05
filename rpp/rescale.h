@@ -17,14 +17,14 @@ namespace R {
 	*/
 	template<typename T>
 	variant_vector rescale(variant_vector& x, std::pair<double, double> to = std::pair(0.0, 1.0), std::pair<double, double> range = std::pair(0.0, 0.0)) {
-		variant_vector v{ x };
+		variant_vector vv{ x };
 		if (range.first == range.second) {
 			range = R::range<int>(x);
 		}
-		for (auto& i : v) {
+		for (auto& i : vv) {
 			i = to.first + (((std::get<T>(i) - range.first) / (range.second - range.first)) * (to.second - to.first));
 		}
-		return v;
+		return vv;
 	}
 
 	/**
@@ -40,14 +40,14 @@ namespace R {
 	*/
 	template<typename T>
 	variant_vector rescale(variant_vector&& x, std::pair<double, double> to = std::pair(0.0, 1.0), std::pair<double, double> range = std::pair(0.0, 0.0)) {
-		variant_vector v{ x };
+		variant_vector vv{ x };
 		if (range.first == range.second) {
 			range = R::range<int>(x);
 		}
-		for (auto& i : v) {
+		for (auto& i : vv) {
 			i = to.first + (((std::get<T>(i) - range.first) / (range.second - range.first)) * (to.second - to.first));
 		}
-		return v;
+		return vv;
 	}
 
 }

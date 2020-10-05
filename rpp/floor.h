@@ -15,11 +15,11 @@ namespace R {
 	 */
 	template<typename T = double>
 	variant_vector floor(variant_vector& x) {
-		variant_vector v{ x };
-		for (auto& i : v) {
+		variant_vector vv{ x };
+		for (auto& i : vv) {
 			i = std::floor(std::get<T>(i));
 		}
-		return v;
+		return vv;
 	}
 
 	/**
@@ -31,11 +31,11 @@ namespace R {
 	 */
 	template<typename T = double>
 	variant_vector floor(variant_vector&& x) {
-		variant_vector v{ x };
-		for (auto& i : v) {
+		variant_vector vv{ x };
+		for (auto& i : vv) {
 			i = std::floor(std::get<T>(i));
 		}
-		return v;
+		return vv;
 	}
 
 }

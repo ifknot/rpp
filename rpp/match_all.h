@@ -18,23 +18,23 @@ namespace R {
 	 */
 	template< typename T>
 	variant_vector match_all(variant_vector& x, variant_vector& table) {
-		variant_vector v;
+		variant_vector vv;
 		for (const auto& a : table) {
 			auto i = x.begin();
-			auto n = v.size();
+			auto n = vv.size();
 			while ((i = std::find_if(i, x.end(),
 				[&](const r_type& b) {
 					return std::get<T>(a) == std::get<T>(b);
 				}
 			)) != x.end()) {
-				v.push_back(static_cast<r_integer>(distance(x.begin(), i)));
+				vv.push_back(static_cast<r_integer>(distance(x.begin(), i)));
 				i++;
 			}
-			if (n == v.size()) {
-				v.push_back(NA);
+			if (n == vv.size()) {
+				vv.push_back(NA);
 			}
 		}
-		return v;
+		return vv;
 	}
 
 	/**
@@ -51,23 +51,23 @@ namespace R {
 	 */
 	template< typename T>
 	variant_vector match_all(variant_vector& x, variant_vector&& table) {
-		variant_vector v;
+		variant_vector vv;
 		for (const auto& a : table) {
 			auto i = x.begin();
-			auto n = v.size();
+			auto n = vv.size();
 			while ((i = std::find_if(i, x.end(), 
 				[&](const r_type& b) {
 					return std::get<T>(a) == std::get<T>(b);
 				}
 				)) != x.end()) {
-				v.push_back(static_cast<r_integer>(distance(x.begin(), i)));
+				vv.push_back(static_cast<r_integer>(distance(x.begin(), i)));
 				i++;
 			}
-			if (n == v.size()) {
-				v.push_back(NA);
+			if (n == vv.size()) {
+				vv.push_back(NA);
 			}
 		}
-		return v;
+		return vv;
 	}
 	/**
 	 * @brief (R-ish) matchAll (from the tupple-package)
@@ -83,23 +83,23 @@ namespace R {
 	 */
 	template< typename T>
 	variant_vector match_all(variant_vector&& x, variant_vector&& table) {
-		variant_vector v;
+		variant_vector vv;
 		for (const auto& a : table) {
 			auto i = x.begin();
-			auto n = v.size();
+			auto n = vv.size();
 			while ((i = std::find_if(i, x.end(),
 				[&](const r_type& b) {
 					return std::get<T>(a) == std::get<T>(b);
 				}
 			)) != x.end()) {
-				v.push_back(static_cast<r_integer>(distance(x.begin(), i)));
+				vv.push_back(static_cast<r_integer>(distance(x.begin(), i)));
 				i++;
 			}
-			if (n == v.size()) {
-				v.push_back(NA);
+			if (n == vv.size()) {
+				vv.push_back(NA);
 			}
 		}
-		return v;
+		return vv;
 	}
 
 }

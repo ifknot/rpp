@@ -109,7 +109,7 @@ int main() {
 
 	if (!dirty<_num>(mpg["displ"]).size()) {
 
-		std::cout << sort<r_numeric>(unique<r_numeric>(mpg["displ"])) << "\n\n";
+		split<r_numeric>(mpg, mpg["displ"]);
 
 	}
 

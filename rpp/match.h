@@ -20,7 +20,7 @@ namespace R {
 	 */
 	template<typename T>
 	variant_vector match(variant_vector& x, variant_vector& table) {
-		variant_vector v;
+		variant_vector vv;
 		for (const auto& a : table) {
 			auto it = std::find_if(
 				x.begin(),
@@ -30,13 +30,13 @@ namespace R {
 				}
 			);
 			if (it != x.end()) {
-				v.push_back(static_cast<r_integer>(distance(x.begin(), it)));
+				vv.push_back(static_cast<r_integer>(distance(x.begin(), it)));
 			}
 			else {
-				v.push_back(NA);
+				vv.push_back(NA);
 			}
 		}
-		return v;
+		return vv;
 	}
 
 	/**
@@ -53,7 +53,7 @@ namespace R {
 	 */
 	template<typename T>
 	variant_vector match(variant_vector& x, variant_vector&& table) {
-		variant_vector v;
+		variant_vector vv;
 		for (const auto& a : table) {
 			auto it = std::find_if(
 				x.begin(), 
@@ -63,13 +63,13 @@ namespace R {
 				}
 			);
 			if (it != x.end()) {
-				v.push_back(static_cast<r_integer>(distance(x.begin(), it)));
+				vv.push_back(static_cast<r_integer>(distance(x.begin(), it)));
 			}
 			else {
-				v.push_back(NA);
+				vv.push_back(NA);
 			}
 		}
-		return v;
+		return vv;
 	}
 
 	/**
@@ -86,7 +86,7 @@ namespace R {
 	 */
 	template<typename T>
 	variant_vector match(variant_vector&& x, variant_vector&& table) {
-		variant_vector v;
+		variant_vector vv;
 		for (const auto& a : table) {
 			auto it = std::find_if(
 				x.begin(),
@@ -96,13 +96,13 @@ namespace R {
 				}
 			);
 			if (it != x.end()) {
-				v.push_back(static_cast<r_integer>(distance(x.begin(), it)));
+				vv.push_back(static_cast<r_integer>(distance(x.begin(), it)));
 			}
 			else {
-				v.push_back(NA);
+				vv.push_back(NA);
 			}
 		}
-		return v;
+		return vv;
 	}
 
 }

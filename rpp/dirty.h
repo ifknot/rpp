@@ -13,13 +13,13 @@ namespace R {
 	 */
 	template<r_index T>
 	variant_vector dirty(variant_vector x) {
-		variant_vector v;
+		variant_vector vv;
 		for (size_t i{ 0 }; i < x.size(); ++i) {
 			if (x[i].index() != T) {
-				v.push_back(static_cast<r_integer>(i));
+				vv.push_back(static_cast<r_integer>(i));
 			}
 		}
-		return v;
+		return vv;
 	}
 
 }

@@ -16,18 +16,18 @@ namespace R {
 	 */
 	template<typename T>
 	variant_vector sort (variant_vector& x, bool decreasing = false) {
-		variant_vector v{ x };
+		variant_vector vv{ x };
 		// lambda compare functor that works with source variant type 
 		auto compare = [&](const r_type& a, const r_type& b) {
 			return std::get<T>(a) > std::get<T>(b);
 		};
 		if (decreasing) {
-			std::sort(v.rbegin(), v.rend(), compare);
+			std::sort(vv.rbegin(), vv.rend(), compare);
 		}
 		else {
-			std::sort(v.begin(), v.end(), compare);
+			std::sort(vv.begin(), vv.end(), compare);
 		}
-		return v;
+		return vv;
 	}
 
 	/**
@@ -40,18 +40,18 @@ namespace R {
 	 */
 	template<typename T>
 	variant_vector sort (variant_vector&& x, bool decreasing = false) {
-		variant_vector v{ x };
+		variant_vector vv{ x };
 		// lambda compare functor that works with source variant type 
 		auto compare = [&](const r_type& a, const r_type& b) {
 			return std::get<T>(a) < std::get<T>(b);
 		};
 		if (decreasing) {
-			std::sort(v.rbegin(), v.rend(), compare);
+			std::sort(vv.rbegin(), vv.rend(), compare);
 		}
 		else {
-			std::sort(v.begin(), v.end(), compare);
+			std::sort(vv.begin(), vv.end(), compare);
 		}
-		return v;
+		return vv;
 	}
 
 }

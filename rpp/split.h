@@ -1,6 +1,7 @@
 #pragma once
 
 #include "data_structures.h"
+#include "factor.h"
 
 #include <map>
 #include <string>
@@ -18,20 +19,17 @@ namespace R {
 	 * @return		list of data frames containing the values for the groups, named by the levels of f (after converting to a factor)
 	 */
 	template<typename T>
-	variant_list<T, data_frame> split(data_frame& x, variant_vector& v) {
-		//variant_list<T, data_frame> tdf;
-		//auto f = factor<T>(v);			// define the groups by the factor levels
-		//for (const auto& level : f.second) {
-			//std::count << " " << level;
-		//}
-		return variant_list<T, data_frame>;// tdf;
+	variant_list split(data_frame& x, variant_vector& v) {
+		variant_list vl;
+		auto f = R::factor<T>(v);			// define the groups by the factor levels
+		auto& levels = f.second;
+		for (const auto& l : levels) {
+			std::cout << " " << std::get<T>(l);
+		}
+		return vl;
 	}
 
-	//variant_list<std::string, data_frame> split(data_frame& x, variant_factor& f)
 
-	//variant_list<std::string, data_frame> split(variant_vector& x, variant_vector& f& v)
-
-	//variant_list<std::string, data_frame> split(variant_vector& x, variant_factor& f)
 
 
 }
