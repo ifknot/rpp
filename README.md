@@ -10,25 +10,25 @@ My blog page [libfbp.blogspot.com](http://libfbp.blogspot.com/2020/09/a-heteroge
 ## R-ish types and functions so far:
 |structures | | | | | |
 |----------------	|---------------	|--------------	|---------------	|----------------	|-------------------	|
-|[ ] vector       |[ ] variant      |[ ] data_frame |[ ] list         |[ ] matrix       |[ ]                  |
+|[x] vector       |[x] variant      |[x] data_frame |[x] list         |[ ] matrix       |[ ]                  |
 
 |types | | | | | |
 |----------------	|---------------	|--------------	|---------------	|----------------	|-------------------	|
-|[ ] complex      |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
-|[ ] date         |[ ] POSIXct      |[ ] POSIXlt   |[ ]              |[ ]              |[ ]                  |
+|[x] complex      |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
+|[x] date         |[ ] POSIXct      |[ ] POSIXlt   |[ ]              |[ ]              |[ ]                  |
 
 | |functions| | | | | |
 |---------------- |----------------	|---------------	|--------------	|---------------	|----------------	|-------------------	|
-|a|[ ] as_dates    |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
+|a|[x] as_dates    |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
 |b|[ ]             |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
 |c|[ ]             |[ ]              |[ ] colnames   |[ ]              |[ ]              |[ ]                  |
-|f|[ ] factor      |[ ] floor        |[ ]            |[ ]              |[ ]              |[ ]                  |
-|h|[ ] head        |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
-|m|[ ] match       |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
-|n|[ ] names       |[ ] ncol         |[ ] nrow       |[ ]              |[ ]              |[ ]                  |
-|r|[ ] range       |[ ] read_csv     |[ ] rescale    |[ ]              |[ ]              |[ ]                  |
-|s|[ ] sort        |[ ] split        |[ ]            |[ ]              |[ ]              |[ ]                  |
-|t|[ ] tail        |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
-|u|[ ] unique      |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
+|f|[x] factor      |[x] floor        |[ ]            |[ ]              |[ ]              |[ ]                  |
+|h|[x] head        |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
+|m|[x] match       |[x] match_all    |[ ]            |[ ]              |[ ]              |[ ]                  |
+|n|[x] names       |[ ] ncol         |[ ] nrow       |[ ]              |[ ]              |[ ]                  |
+|r|[x] range       |[x] read_csv     |[x] rescale    |[ ]              |[ ]              |[ ]                  |
+|s|[x] sort        |[ ] split        |[ ]            |[ ]              |[ ]              |[ ]                  |
+|t|[x] tail        |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
+|u|[x] unique      |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
 ## example usage
 main.cpp is your best place at the moment
