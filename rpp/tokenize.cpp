@@ -17,7 +17,7 @@ namespace R {
 					return token_t::integer_t;
 				}
 				else {
-					return token_t::double_t;
+					return token_t::numeric_t;
 				}
 			}
 			catch (std::invalid_argument) {
@@ -33,6 +33,8 @@ namespace R {
 		if (lexeme[0] == '\'' && lexeme.size() == 3 && lexeme[lexeme.size() - 1] == '\'') {
 			return token_t::raw_t;
 		}
+		// TODO: complex_t
+		// TODO: date_t
 		return token_t::broken_t;
 	}
 

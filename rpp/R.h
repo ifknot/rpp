@@ -17,5 +17,7 @@
 #include "read_csv.h"
 #include "head.h"
 #include "tail.h"
+#include "split.h"
+#include "dirty.h"
 
 

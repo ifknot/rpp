@@ -28,6 +28,7 @@ std::ostream& operator << (std::ostream& os, const R::variant_factor& vf) {
 	return os;
 }
 
+// TODO: better tab layout 
 std::ostream& operator << (std::ostream& os, const R::data_frame& df) {
 	size_t sz{ 0 };
 	for (const auto& [key, vctr] : df) { // keys as column headings

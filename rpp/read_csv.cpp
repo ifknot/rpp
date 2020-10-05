@@ -50,13 +50,15 @@ namespace R {
 					case token_t::integer_t:
 						d[column[nfield]].push_back(stoi(field));
 						break;
-					case token_t::double_t:
+					case token_t::numeric_t:
 						d[column[nfield]].push_back(stod(field));
 						break;
 					case token_t::complex_t:
+						// TODO: date_t
 						break;
-					case token_t::string_t:
 					case token_t::date_t:
+						// TODO: date_t
+					case token_t::string_t:
 						//std::cout << field << " " << column[nfield] << '\n';
 						d[column[nfield]].push_back(field.substr(1, field.size() - 2));
 						break;

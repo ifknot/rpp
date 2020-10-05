@@ -12,7 +12,7 @@ namespace R {
 	 * @tparam T			variant type
 	 * @param x				variant vector of values to sort
 	 * @param decreasing	bool should the sort be increasing or decreasing?
-	 * @return				variant_vector
+	 * @return				sorted variant_vector
 	 */
 	template<typename T>
 	variant_vector sort (variant_vector& x, bool decreasing = false) {
@@ -36,7 +36,7 @@ namespace R {
 	 * @tparam T			variant type
 	 * @param x				variant vector of values to sort
 	 * @param decreasing	bool should the sort be increasing or decreasing?
-	 * @return				variant_vector
+	 * @return				sorted variant_vector
 	 */
 	template<typename T>
 	variant_vector sort (variant_vector&& x, bool decreasing = false) {
