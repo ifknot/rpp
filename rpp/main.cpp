@@ -93,26 +93,36 @@ int main() {
 
 	//std::cout << df << "\n\n";
 
-	auto mpg = read_csv("mpg.csv");
+	//auto mpg = read_csv("mpg.csv");
 
 	//std::cout << names(mpg) << "\n\n";
 
-	try {
+	//try {
 		//mpg["year"] = as_dates({ mpg["displ"] });
-		mpg["year"] = as_dates({ mpg["year"] });
-	}
-	catch (const std::exception& e) {
-		std::cerr << e.what() << "\n\n";
-	}
+		//mpg["year"] = as_dates({ mpg["year"] });
+	//}
+	//catch (const std::exception& e) {
+		//std::cerr << e.what() << "\n\n";
+	//}
 
-	std::cout << head(mpg);
+	//std::cout << head(mpg);
 
-	if (!dirty<_num>(mpg["displ"]).size()) {
+	//if (!dirty<_num>(mpg["displ"]).size()) {
 
-		split<r_numeric>(mpg, mpg["displ"]);
+		//split<r_numeric>(mpg, mpg["displ"]);
 
-	}
+	//}
 
 	//split<r_date>(mpg, mpg["year"]);
+
+	data_frame data;
+
+	data["id"] = { "A", "A", "B", "B", "B", "C" };
+	data["x1"] = { 1, 2, 3, 4, 5, 6 };
+	data["x2"] = { 11, 12, 13, 14, 15, 16 };
+
+	std::cout << data;
+
+	split<r_string>(data, data["id"]);
 
 }

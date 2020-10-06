@@ -109,5 +109,8 @@
     <ClInclude Include="dirty.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="as_string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

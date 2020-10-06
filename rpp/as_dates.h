@@ -18,6 +18,7 @@ namespace R {
 	* calendar dates.
 	* 
 	* @param dates 
+	* @param format	- an override std::get_time compatible format string b
 	*/
 	variant_vector as_dates(variant_vector&& dates, std::string format = "");
 

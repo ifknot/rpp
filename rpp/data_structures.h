@@ -39,9 +39,9 @@ namespace R {
 	 * 
 	 * @note *none* of these characteristics are checked for.
 	 */
-	using data_frame = std::unordered_map<std::string, variant_vector>;
+	using data_frame = std::unordered_map<r_string, variant_vector>;
 
-
-	using variant_list = std::unordered_map<std::string, data_frame>;
+	// TODO: typename T
+	using variant_list = std::unordered_map<r_string, data_frame>;
 
 }

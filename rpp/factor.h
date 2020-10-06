@@ -23,7 +23,8 @@ namespace R {
 	variant_factor factor(variant_vector& x, variant_vector&& levels = {}, variant_vector&& labels = {}, variant_vector&& exclude = {}) {
 		// if levels defined use it to build a unique categories vector otherwise build it from x
 		variant_vector categories{ levels.size() ? R::sort<T>(R::unique<T>(levels)) : R::sort<T>(R::unique<T>(x)) };
-		variant_vector ordinals;
+		// TODO: as_string
+		variant_vector ordinals;b
 		for (const auto& i : x) {		// check each x
 			r_integer ordinal{ first };
 			for (const auto& c : categories) {	// against each category
@@ -41,6 +42,7 @@ namespace R {
 	variant_factor factor(variant_vector&& x, variant_vector&& levels = {}, variant_vector&& labels = {}, variant_vector&& exclude = {}) {
 		// if levels defined use it to build a unique categories vector otherwise build it from x
 		variant_vector categories{ levels.size() ? R::sort<T>(R::unique<T>(levels)) : R::sort<T>(R::unique<T>(x)) };
+		// TDOD: aa_string
 		variant_vector ordinals;
 		std::cout << "{" << categories << "}\n";
 		for (const auto& i : x) {		// check each x

@@ -161,6 +161,7 @@
     <ClInclude Include="factor.h" />
     <ClInclude Include="floor.h" />
     <ClInclude Include="head.h" />
+    <ClInclude Include="as_string.h" />
     <ClInclude Include="names.h" />
     <ClInclude Include="match.h" />
     <ClInclude Include="match_all.h" />

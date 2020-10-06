@@ -29,7 +29,4 @@ namespace R {
 		return vl;
 	}
 
-
-
-
 }
