@@ -46,7 +46,7 @@ namespace R {
 	 */
 	struct r_date {
 
-		std::tm tm;
+		std::tm tm{};
 		std::string format{ "%Y-%m-%d" };
 
 		bool is_equal(const r_date& rhs) const {

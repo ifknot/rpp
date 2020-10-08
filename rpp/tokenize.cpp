@@ -12,7 +12,8 @@ namespace R {
 		}
 		if (std::regex_match(lexeme, std::regex("[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?"))) {
 			try {
-				auto x = std::stod(lexeme); // int or doube
+				std::stod(lexeme); // try convert 
+				// if get here then int or double
 				if (lexeme.find_first_not_of("+-0123456789") == std::string::npos) {
 					return token_t::integer_t;
 				}
@@ -20,6 +21,7 @@ namespace R {
 					return token_t::numeric_t;
 				}
 			}
+			//otherwise catch the exception and tokenize accordingly
 			catch (std::invalid_argument) {
 				return token_t::broken_t;
 			}

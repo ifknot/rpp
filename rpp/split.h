@@ -19,14 +19,37 @@ namespace R {
 	 * @return		list of data frames containing the values for the groups, named by the levels of f (after converting to a factor)
 	 */
 	template<typename T>
-	variant_list split(data_frame& x, variant_vector& v) {
-		variant_list vl;
-		auto f = R::factor<T>(v);			// define the groups by the factor levels
-		auto& levels = f.second;
-		for (const auto& l : levels) {
-			std::cout << " " << std::get<T>(l);
+	data_frame_list split(data_frame& x, variant_vector& v) {
+		data_frame_list split_list;
+		auto [ordinals, levels] = R::factor<T>(v);			// define the groups by the factor levels
+
+		auto i = 1u;
+		for (const auto& level : levels) {
+			std::cout << "$" << std::get<r_string>(level) << '\n';
+			//data_frame df;
+			for (const auto& [key, vec] : x) {
+				//if(ordinals[j] = )
+				std::cout << key;
+				auto j = 0u;
+				for (const auto& v : vec) {
+					std::cout << ' ' << std::get<r_integer>(ordinals[j++]) << ',' << i;
+				}
+				std::cout << '\n';
+			}
+
+			//split_list[level] = df;
+			++i;
+			std::cout << '\n';
+
+
 		}
-		return vl;
+		//each level as the key
+			//temp df
+			//for x key, vec
+			// new df to each level as key
+			// step through each ordinal if it matches the current level then add to df each key from source df to build a row
+			//build a vv of enumerate rows as per the ordinals
+		return split_list;
 	}
 
 }

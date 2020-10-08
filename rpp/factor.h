@@ -24,7 +24,7 @@ namespace R {
 		// if levels defined use it to build a unique categories vector otherwise build it from x
 		variant_vector categories{ levels.size() ? R::sort<T>(R::unique<T>(levels)) : R::sort<T>(R::unique<T>(x)) };
 		// TODO: as_string
-		variant_vector ordinals;b
+		variant_vector ordinals;
 		for (const auto& i : x) {		// check each x
 			r_integer ordinal{ first };
 			for (const auto& c : categories) {	// against each category

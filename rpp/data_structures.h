@@ -41,7 +41,7 @@ namespace R {
 	 */
 	using data_frame = std::unordered_map<r_string, variant_vector>;
 
-	// TODO: typename T
-	using variant_list = std::unordered_map<r_string, data_frame>;
+	
+	using data_frame_list = std::unordered_map<r_string, data_frame>;
 
 }
