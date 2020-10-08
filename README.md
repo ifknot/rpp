@@ -19,13 +19,13 @@ My blog page [libfbp.blogspot.com](http://libfbp.blogspot.com/2020/09/a-heteroge
 
 | |functions| | | | | |
 |---------------- |----------------	|---------------	|--------------	|---------------	|----------------	|-------------------	|
-|a|[x] as_dates    |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
+|a|[x] as_dates    |[ ] as_string    |[ ]            |[ ]              |[ ]              |[ ]                  |
 |b|[ ]             |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
 |c|[ ]             |[ ]              |[ ] colnames   |[ ]              |[ ]              |[ ]                  |
 |f|[x] factor      |[x] floor        |[ ]            |[ ]              |[ ]              |[ ]                  |
 |h|[x] head        |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
 |m|[x] match       |[x] match_all    |[ ]            |[ ]              |[ ]              |[ ]                  |
-|n|[x] names       |[ ] ncol         |[ ] nrow       |[ ]              |[ ]              |[ ]                  |
+|n|[ ] names       |[ ] ncol         |[ ] nrow       |[ ]              |[ ]              |[ ]                  |
 |r|[x] range       |[x] read_csv     |[x] rescale    |[ ]              |[ ]              |[ ]                  |
 |s|[x] sort        |[ ] split        |[ ]            |[ ]              |[ ]              |[ ]                  |
 |t|[x] tail        |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
