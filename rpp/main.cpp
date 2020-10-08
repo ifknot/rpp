@@ -117,12 +117,13 @@ int main() {
 
 	data_frame data;
 
-	data["id"] = { "A", "A", "B", "B", "B", "C" };
+	data["id"] = { "A", "B", "B", "C", "B", "A" };
 	data["x1"] = { 1, 2, 3, 4, 5, 6 };
 	data["x2"] = { 11, 12, 13, 14, 15, 16 };
 
 	std::cout << data;
 
-	split<r_string>(data, data["id"]);
+	auto list = split<r_string>(data, data["id"]);
+	std::cout << list["A"];
 
 }
