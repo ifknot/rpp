@@ -124,6 +124,6 @@ int main() {
 	std::cout << data;
 
 	auto list = split<r_string>(data, data["id"]);
-	std::cout << list["A"];
+	std::cout << list;
 
 }

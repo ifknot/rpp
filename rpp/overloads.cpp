@@ -1,6 +1,7 @@
 #include "overloads.h"
 
 #include <iomanip>
+#include <variant>
 
 bool operator > (const R::r_date& lhs, const R::r_date& rhs) {
 	return lhs.is_greater(rhs);
@@ -46,6 +47,14 @@ std::ostream& operator << (std::ostream& os, const R::data_frame& df) {
 			std::visit([&os](auto&& arg) {os << '\t' << arg; }, vctr[i]);
 		}
 		os << '\n';
+	}
+	return os;
+}
+
+std::ostream& operator<<(std::ostream& os, const R::data_frame_list& dfl) {
+	for (const auto& [key, df] : dfl) {
+		os << '$' << key << '\n';
+		os << df;
 	}
 	return os;
 }
