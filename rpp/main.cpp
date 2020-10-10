@@ -14,15 +14,15 @@ int main() {
 	std::cout << "heterogeneous container\n\n";
 
 	
-	//R::data_frame d;
+	R::data_frame d;
 
-	//d["id"] = { 1, 2, 3, 4, 5 };
-	//d["name"] = { "Rick", "Dan", "Michell", "Ryan", "Gary" };
-	//d["salary"] = { 623.3, 515.2, 611.0, 729.0, 843.25 };
-	//d["start_date"] = as_dates({ "2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11", "2015-03-27" });
+	d["id"] = { 1, 2, 3, 4, 5 };
+	d["name"] = { "Rick", "Dan", "Michell", "Ryan", "Gary" };
+	d["salary"] = { 623.3, 515.2, 611.0, 729.0, 843.25 };
+	d["start_date"] = as_dates({ "2013-09-23", "2012-01-01", "2015-03-27", "2014-11-15", "2014-05-11" }, "%Y-%m-%d");
 
 	// print out data table 
-	//std::cout << d << '\n';
+	std::cout << d << '\n';
 
 	// accessing data does need prior knowledge of the column data type
 	//auto money = std::get<_num>(d["salary"][1]);
@@ -36,7 +36,7 @@ int main() {
 
 	//std::cout << d["name"] << "\n\n";
 
-	//std::cout << sort<r_date>(d["start_date"]) << "\n\n";
+	std::cout << sort<r_date>(d["start_date"], true) << "\n\n";
 
 	//auto salary_range = range<r_numeric>(d["salary"]);
 
@@ -93,19 +93,19 @@ int main() {
 
 	//std::cout << df << "\n\n";
 
-	//auto mpg = read_csv("mpg.csv");
+	auto mpg = read_csv("mpg.csv");
 
 	//std::cout << names(mpg) << "\n\n";
 
-	//try {
+	try {
 		//mpg["year"] = as_dates({ mpg["displ"] });
-		//mpg["year"] = as_dates({ mpg["year"] });
-	//}
-	//catch (const std::exception& e) {
-		//std::cerr << e.what() << "\n\n";
-	//}
+		mpg["year"] = as_dates({ mpg["year"] }, "%Y");
+	}
+	catch (const std::exception& e) {
+		std::cerr << e.what() << "\n\n";
+	}
 
-	//std::cout << head(mpg);
+	std::cout << head(mpg);
 
 	//if (!dirty<_num>(mpg["displ"]).size()) {
 
@@ -113,17 +113,17 @@ int main() {
 
 	//}
 
-	//split<r_date>(mpg, mpg["year"]);
+	std::cout << sort<r_date>(mpg["year"]);
 
-	data_frame data;
+	//data_frame data;
 
-	data["id"] = { "A", "B", "B", "C", "B", "A" };
-	data["x1"] = { 1, 2, 3, 4, 5, 6 };
-	data["x2"] = { 11, 12, 13, 14, 15, 16 };
+	//data["id"] = { "A", "B", "B", "C", "B", "A" };
+	//data["x1"] = { 1, 2, 3, 4, 5, 6 };
+	//data["x2"] = { 11, 12, 13, 14, 15, 16 };
 
-	std::cout << data;
+	//std::cout << data;
 
-	auto list = split<r_string>(data, data["id"]);
-	std::cout << list;
+	//auto list = split<r_string>(data, data["id"]);
+	//std::cout << list;
 
 }

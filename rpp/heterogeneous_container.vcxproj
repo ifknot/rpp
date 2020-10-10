@@ -151,6 +151,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="names.cpp" />
     <ClCompile Include="read_csv.cpp" />
+    <ClCompile Include="r_date.cpp" />
     <ClCompile Include="sort.h" />
     <ClCompile Include="overloads.cpp" />
     <ClCompile Include="tail.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="range.h" />
     <ClInclude Include="read_csv.h" />
     <ClInclude Include="rescale.h" />
+    <ClInclude Include="r_date.h" />
     <ClInclude Include="split.h" />
     <ClInclude Include="tail.h" />
     <ClInclude Include="tokenize.h" />

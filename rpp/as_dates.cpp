@@ -16,16 +16,17 @@ namespace R {
 				break;
 			case _int:
 				d = std::to_string(std::get<_int>(date));
-				format = (format == "") ? "%Y" : format;	// int defaults to year
 				break;
 			default:
 				throw std::invalid_argument(std::string(__func__) + " invalid argument " + index_to_string[date.index()]);
 			}
-			std::istringstream ss(d + "T00:00:00Z ");
-		std:tm tm;
+			std::istringstream ss(d);
+			std::time_t t = std::time(nullptr);
+			std:tm tm;
+			tm = *std::localtime(&t);
+			ss >> std::get_time(&tm, format.c_str());
 			r_date tm_date;
-			tm_date.format = (format == "") ? tm_date.format : format;
-			ss >> std::get_time(&tm, tm_date.format.c_str());
+			tm_date.format = format;
 			tm_date.tm = tm;
 			tm_dates.push_back(tm_date);
 		}
@@ -42,16 +43,17 @@ namespace R {
 				break;
 			case _int:
 				d = std::to_string(std::get<_int>(date));
-				format = (format == "") ? "%Y" : format;	// int defaults to year
 				break;
 			default:
 				throw std::invalid_argument(std::string(__func__) + " invalid argument " + index_to_string[date.index()]);
 			}
-			std::istringstream ss(d + "T00:00:00Z ");
+			std::istringstream ss(d);
+			std::time_t t = std::time(nullptr);
 			std:tm tm;
+			tm = *std::localtime(&t);
+			ss >> std::get_time(&tm, format.c_str());
 			r_date tm_date;
-			tm_date.format = (format == "") ? tm_date.format : format;
-			ss >> std::get_time(&tm, tm_date.format.c_str());
+			tm_date.format = format;
 			tm_date.tm = tm;
 			tm_dates.push_back(tm_date);
 		}

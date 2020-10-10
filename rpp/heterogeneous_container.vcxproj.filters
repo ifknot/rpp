@@ -42,6 +42,9 @@
     <ClCompile Include="tail.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="r_date.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="mpg.csv">
@@ -110,6 +113,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="as_string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="r_date.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

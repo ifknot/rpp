@@ -5,15 +5,9 @@
 #include <iostream>
 #include <map>
 
-bool operator > (const R::r_date& lhs, const R::r_date& rhs);
-
-bool operator == (const R::r_date& lhs, const R::r_date& rhs);
-
 /*-------- stream operator overloads --------*/
 
 std::ostream& operator << (std::ostream& os, const R::r_logical& b);
-
-std::ostream& operator << (std::ostream& os, const R::r_date& date);
 
 std::ostream& operator << (std::ostream& os, const R::variant_vector& vv);
 

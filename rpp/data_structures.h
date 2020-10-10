@@ -7,6 +7,8 @@
 
 namespace R {
 
+	//TODO: separate files along with their overloads
+
 	/**
 	 * @brief in R vectors can store multiple variables of any *single* type i.e. they are type homogeneous 
 	 * to use R-lang parlance they are 'atomic' (which sounds odd to the C++ ear).

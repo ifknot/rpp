@@ -1,21 +1,14 @@
 #include "overloads.h"
 
-#include <iomanip>
 #include <variant>
 
-bool operator > (const R::r_date& lhs, const R::r_date& rhs) {
-	return lhs.is_greater(rhs);
-}
+
 
 std::ostream& operator<<(std::ostream& os, const R::r_logical& b) {
 	os << ((b.boolean) ?"TRUE" :"FALSE");
 	return os;
 }
 
-std::ostream& operator << (std::ostream& os, const R::r_date& date) {
-	os << std::put_time(&date.tm, date.format.c_str());
-	return os;
-}
 
 std::ostream& operator << (std::ostream& os, const R::variant_vector& vv) {
 	for (const auto& v : vv) {

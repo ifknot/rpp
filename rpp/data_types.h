@@ -2,11 +2,11 @@
 
 #include <variant>
 #include <string>
-#include <ctime>
 #include <array>
 #include <complex>
 
 #include "constants.h"
+#include "r_date.h"
 
 /**
  * @brief Designed to offer familiar enough semantics with their R language counterparts to facilitate R knowledge and skills transfer into the C++ domain.
@@ -36,34 +36,6 @@ namespace R {
 	 */
 	struct r_logical {
 		bool boolean;
-	};
-
-	/**
-	 * An R-ish calender date type
-	 * This is the type to use if you have only dates, but no times, in your data.
-	 * Default format is "%Y-%m-%d" e.g. 2020 - 09 - 30
-	 * functions: as_dates, diffdates, +, -, etc
-	 */
-	struct r_date {
-
-		std::tm tm{};
-		std::string format{ "%Y-%m-%d" };
-
-		bool is_equal(const r_date& rhs) const {
-			auto rhs_tm = rhs.tm;
-			auto lhs_tm = tm;
-			return std::mktime(&lhs_tm) == std::mktime(&rhs_tm);
-		}
-
-		bool is_greater (const r_date& rhs) const {
-			auto rhs_tm = rhs.tm;
-			auto lhs_tm = tm;
-			return std::mktime(&lhs_tm) > std::mktime(&rhs_tm);
-		}
-
-		//  TODO: operator+=
-		//  TODO: operator-=
-
 	};
 
 	/**
