@@ -1,20 +1,16 @@
 #pragma once
 
-#include <math.h>
-#include <unordered_set>
+#include <algorithm>
 
 #include "data_structures.h"
+#include "sort.h"
 
 namespace R {
 
-	// TODO: comparators for numeric(because f.p.), date, and complex
-	// auto cmp = [](int a, int b) { return ... };
-	// std::set<int, decltype(cmp)> s(cmp);
-
 	/**
 	 * @brief (R-ish) unique returns a variant vector like x but with duplicate elements removed.
-	 * @note maintains the original order of the remaining elements.
-	 *
+	 * @note preserves the original order but at the price of O(n)
+	 * 
 	 * @tparam T	variant type
 	 * @param x		variant vector of r_string values to convert
 	 * @return		variant vector of unique values
@@ -24,26 +20,53 @@ namespace R {
 		if (x.size() == 0 || x.size() == 1) {
 			return x;
 		}
-		std::vector<T> vv;
-		for (const auto& v : x) {
-			vv.push_back(std::get<T>(v));
+		variant_vector vv;
+		for (const auto& a : x) {
+			if (!std::any_of(vv.begin(), vv.end(), [&](const r_type& b) {
+				return std::get<T>(a) == std::get<T>(b);
+				})) {
+				vv.push_back(a);
+			}
 		}
-		std::set<T> s(vv.begin(), vv.end());
-		vv.assign(s.begin(), s.end());
-		return variant_vector{};
+		return vv;
 	}
 
 	/**
-	 * @brief (R-ish) unique returns a variant vector like x but with duplicate elements removed.
-	 *
+	 * @brief (R-ish) unique returns a sorted variant vector like x but with duplicate elements removed.
+	 * @note preserves the original order but at the price of O(n)
+	 * 
 	 * @tparam T	variant type
 	 * @param x		variant vector of r_string values to convert
 	 * @return		variant vector of unique values
 	 */
 	template<typename T>
 	variant_vector unique(variant_vector&& x) {
-		
-		return variant_vector{};
+		if (x.size() == 0 || x.size() == 1) {
+			return x;
+		}
+		variant_vector vv;
+		for (const auto& a : x) {
+			if (!std::any_of(vv.begin(), vv.end(), [&](const r_type& b) {
+				return std::get<T>(a) == std::get<T>(b);
+			})) {
+				vv.push_back(a);
+			}
+		}
+		return vv;
 	}
 
 }
+
+/*
+
+if (x.size() == 0 || x.size() == 1) {
+			return x;
+		}
+		variant_vector vv = sort<T>(x);
+		auto equals = [&](const r_type& a, const r_type& b) {
+			return std::get<T>(a) == std::get<T>(b);
+		};
+		vv.erase(std::unique(vv.begin(), vv.end(), equals), vv.end());
+		return vv;
+
+*/
