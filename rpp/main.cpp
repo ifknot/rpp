@@ -20,7 +20,7 @@ int main() {
 	d["name"] = { "Rick", "Dan", "Mary", "Ryan", "Gary" };
 	d["salary"] = { 623.3, 515.2, 611.0, 729.0, 843.25 };
 	d["start_date"] = as_dates({ "2013-09-23", "2012-01-01", "2015-03-27", "2014-11-15", "2014-05-11" }, "%Y-%m-%d");
-	d["male"] = { TRUE, TRUE, FALSE, TRUE, TRUE};
+	d["male"] = { TRUE, TRUE, FALSE, TRUE, TRUE };
 
 	// print out data table 
 	std::cout << d << '\n';
@@ -42,30 +42,42 @@ int main() {
 	std::cout << unique<r_integer>(d["id"]) << "\n\n";
 	std::cout << sort<r_integer>(unique<r_integer>(d["id"])) << "\n\n";
 	std::cout << unique<r_integer>(sort<r_integer>(d["id"])) << "\n\n";
-
+	std::cout << as_string(sort<r_integer>(d["id"])) << "\n\n";
+	*/
+	/*
 	std::cout << sort<r_string>(d["name"]) << "\n\n";
 	std::cout << unique<r_string>(d["name"]) << "\n\n";
 	std::cout << sort<r_string>(unique<r_string>(d["name"])) << "\n\n";
 	std::cout << unique<r_string>(sort<r_string>(d["name"])) << "\n\n";
-	
+	*/
+	/*
 	std::cout << sort<r_numeric>(d["salary"]) << "\n\n";
-	std::cout << as_string(sort<r_numeric>(d["salary"])) << "\n\n";
-
+	std::cout << unique<r_numeric>(d["salary"]) << "\n\n";
+	std::cout << sort<r_numeric>(unique<r_numeric>(d["salary"])) << "\n\n";
+	std::cout << unique<r_numeric>(sort<r_numeric>(d["salary"])) << "\n\n";
+	*/
+	
 	std::cout << sort<r_date>(d["start_date"]) << "\n\n";
-	std::cout << as_string(sort<r_date>(d["start_date"])) << "\n\n";
-
-	std::cout << sort<r_integer>(d["id"]) << "\n\n";
-	std::cout << as_string(sort<r_integer>(d["id"])) << "\n\n";
-
+	std::cout << unique<r_date>(d["start_date"]) << "\n\n";
+	//std::cout << sort<r_date>(unique<r_date>(d["start_date"])) << "\n\n";
+	//std::cout << unique<r_date>(sort<r_date>(d["start_date"])) << "\n\n";
+	//std::cout << as_string(sort<r_date>(d["start_date"])) << "\n\n";
+	
+	/*
 	std::cout << sort<r_logical>(d["male"]) << "\n\n";
+	std::cout << unique<r_logical>(d["male"]) << "\n\n";
+	std::cout << sort<r_logical>(unique<r_logical>(d["male"])) << "\n\n";
+	std::cout << unique<r_logical>(sort<r_logical>(d["male"])) << "\n\n";
 	std::cout << as_string(sort<r_logical>(d["male"])) << "\n\n";
 	*/
 
-	std::cout << factor<r_string>(d["name"]) << "\n\n";
+	//std::cout << factor<r_date>(d["start_date"]) << "\n\n";
 
 	//std::cout << sort<r_date>(d["start_date"], true) << "\n\n";
 
-	std::cout << split<r_integer>(d, d["id"]) << "\n\n";
+	//std::cout << split<r_logical>(d, d["male"]) << "\n\n";
+
+	//std::cout << split<r_logical>(d, { TRUE, TRUE, FALSE, TRUE, TRUE }) << "\n\n";
 
 	//auto salary_range = range<r_numeric>(d["salary"]);
 

@@ -8,7 +8,7 @@ namespace R {
 	 * A separate logical type to prevent C++ implicitly (i.e. silently) coercing bool to integer!
 	 */
 	struct r_logical {
-		bool boolean;
+		bool b{true};
 	};
 
 }

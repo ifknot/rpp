@@ -24,11 +24,13 @@ namespace R {
 		if (x.size() == 0 || x.size() == 1) {
 			return x;
 		}
-		std::unordered_set<T> s;
+		std::vector<T> vv;
 		for (const auto& v : x) {
-			s.emplace(std::get<T>(v));
+			vv.push_back(std::get<T>(v));
 		}
-		return variant_vector (s.begin(), s.end());
+		std::set<T> s(vv.begin(), vv.end());
+		vv.assign(s.begin(), s.end());
+		return variant_vector{};
 	}
 
 	/**
@@ -40,14 +42,8 @@ namespace R {
 	 */
 	template<typename T>
 	variant_vector unique(variant_vector&& x) {
-		if (x.size() == 0 || x.size() == 1) {
-			return x;
-		}
-		std::unordered_set<T> s;
-		for (const auto& v : x) {
-			s.emplace(std::get<T>(v));
-		}
-		return variant_vector (s.begin(), s.end());
+		
+		return variant_vector{};
 	}
 
 }
