@@ -21,9 +21,9 @@ namespace R {
 				throw std::invalid_argument(std::string(__func__) + " invalid argument " + index_to_string[date.index()]);
 			}
 			std::istringstream ss(d);
-			std::time_t t = std::time(nullptr);
 			std:tm tm;
-			tm = *std::localtime(&t);
+			std::time_t t = std::time(nullptr);
+			tm = *std::localtime(&t);	// ensure no tm elements are undefined, or mktime will fail
 			ss >> std::get_time(&tm, format.c_str());
 			r_date tm_date;
 			tm_date.format = format;
@@ -48,9 +48,9 @@ namespace R {
 				throw std::invalid_argument(std::string(__func__) + " invalid argument " + index_to_string[date.index()]);
 			}
 			std::istringstream ss(d);
-			std::time_t t = std::time(nullptr);
 			std:tm tm;
-			tm = *std::localtime(&t);
+			std::time_t t = std::time(nullptr);
+			tm = *std::localtime(&t);	// ensure no tm elements are undefined, or mktime will fail
 			ss >> std::get_time(&tm, format.c_str());
 			r_date tm_date;
 			tm_date.format = format;

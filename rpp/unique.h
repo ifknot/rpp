@@ -13,6 +13,7 @@ namespace R {
 
 	/**
 	 * @brief (R-ish) unique returns a variant vector like x but with duplicate elements removed.
+	 * @note maintains the original order of the remaining elements.
 	 *
 	 * @tparam T	variant type
 	 * @param x		variant vector of r_string values to convert

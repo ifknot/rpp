@@ -2,23 +2,12 @@
 
 #include <variant>
 
-
-
-std::ostream& operator<<(std::ostream& os, const R::r_logical& b) {
-	os << ((b.boolean) ?"TRUE" :"FALSE");
-	return os;
-}
-
+#include "typeof.h"
 
 std::ostream& operator << (std::ostream& os, const R::variant_vector& vv) {
 	for (const auto& v : vv) {
 		std::visit([&os](auto&& arg) {os << arg << '\t'; }, v);
 	}
-	return os;
-}
-
-std::ostream& operator << (std::ostream& os, const R::variant_factor& vf) {
-	os << vf.first << "\n Levels: " << vf.second;
 	return os;
 }
 
@@ -31,7 +20,7 @@ std::ostream& operator << (std::ostream& os, const R::data_frame& df) {
 	}
 	std::cout << '\n';
 	for (const auto& [key, vctr] : df) { // column variant type index of the first item in the column vector
-		os << '\t' << "(" << R::index_to_string[vctr.front().index()] << ")";
+		os << '\t' << "(" << R::typeof(vctr.front()) << ")";
 	}
 	std::cout << '\n';
 	for (size_t i{ 0 }; i < sz; ++i) { // records

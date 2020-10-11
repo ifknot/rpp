@@ -2,6 +2,7 @@
 
 #include "data_structures.h"
 #include "factor.h"
+#include "as_string.h"
 
 #include <map>
 #include <string>
@@ -21,17 +22,20 @@ namespace R {
 	template<typename T>
 	data_frame_list split(data_frame& x, variant_vector& v) {
 		data_frame_list split_list;
-		auto [ordinals, levels] = factor<T>(v);			// define the groups by the factor levels
-		for (int level_ordinal{ first }; const auto& level : levels) {
-			//data_frame df;
+		const auto&[ordinal, levels] = factor<T>(v);			// define the groups by the factor levels
+		for (int rank{ first }; const auto& level : levels) {
+			data_frame df;
 			for (const auto& [key, vec] : x) {	
 				for (auto row{ 0u }; const auto& v : vec) {
-					if (std::get<r_integer>(ordinals[row++]) == level_ordinal) {
-						split_list[std::get<r_string>(level)][key].push_back(v);
+					if (ordinal[row++] == rank) {
+						df[key].push_back(v);
 					}
 				}
 			}
-			++level_ordinal;
+			std::cout << as_string(level) << '\n';
+			std::cout << df << '\n';
+			//split_list[level] = df;
+			++rank;
 		}
 		return split_list;
 	}

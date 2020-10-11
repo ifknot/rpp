@@ -14,10 +14,12 @@
 #include "rescale.h"
 #include "floor.h"
 #include "as_dates.h"
+#include "as_string.h"
 #include "read_csv.h"
 #include "head.h"
 #include "tail.h"
 #include "split.h"
 #include "dirty.h"
+#include "typeof.h"
 
 

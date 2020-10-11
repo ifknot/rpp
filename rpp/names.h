@@ -17,6 +17,6 @@ namespace R {
 	 * https://www.fluentcpp.com/2020/05/01/how-to-change-a-key-in-a-map-or-set-in-cpp/
 	 * 
 	 */
-	variant_vector names(data_frame& x);
+	variant_vector name_t(data_frame& x);
 
 }

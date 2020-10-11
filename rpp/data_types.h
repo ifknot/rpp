@@ -6,6 +6,7 @@
 #include <complex>
 
 #include "constants.h"
+#include "r_logical.h"
 #include "r_date.h"
 
 /**
@@ -22,7 +23,7 @@
 namespace R {
 
 	/**
-	 * The 6 basic R-ish data types (raw, character, numeric, integer, logical, complex
+	 * The 7 basic R-ish data types (raw, character, numeric, integer, logical, complex, date)
 	 * @note to avoid confusion between character and string in C++ domain "string_t" is used
 	 */
 	using r_raw = char;
@@ -31,12 +32,7 @@ namespace R {
 	using r_integer = int;
 	using r_complex = std::complex<double>;
 
-	/**
-	 * A separate logical type to prevent C++ implicitly (i.e. silently) coercing bool to integer!
-	 */
-	struct r_logical {
-		bool boolean;
-	};
+	using r_ordinal = unsigned int;
 
 	/**
 	 * define a variant of the 7 R-ish data types
@@ -52,7 +48,7 @@ namespace R {
 	/**
 	 * convert PODs into their string name
 	 */
-	static const std::array<std::string, 7> index_to_string{ "raw", "int", "num", "str", "bool", "cplx", "date" };
+	static const std::array<r_string, 7> index_to_string{ "raw", "int", "num", "str", "bool", "cplx", "date" };
 
 	/**
 	 * syntactic sugar

@@ -147,15 +147,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="as_dates.cpp" />
+    <ClCompile Include="as_string.cpp" />
     <ClCompile Include="head.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="names.cpp" />
+    <ClCompile Include="ordinal_vector.cpp" />
     <ClCompile Include="read_csv.cpp" />
     <ClCompile Include="r_date.cpp" />
+    <ClCompile Include="r_logical.cpp" />
     <ClCompile Include="sort.h" />
     <ClCompile Include="overloads.cpp" />
+    <ClCompile Include="string_vector.cpp" />
     <ClCompile Include="tail.cpp" />
     <ClCompile Include="tokenize.cpp" />
+    <ClCompile Include="typeof.cpp" />
+    <ClCompile Include="variant_factor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="as_dates.h" />
@@ -166,6 +172,8 @@
     <ClInclude Include="floor.h" />
     <ClInclude Include="head.h" />
     <ClInclude Include="as_string.h" />
+    <ClInclude Include="ordinal_vector.h" />
+    <ClInclude Include="r_logical.h" />
     <ClInclude Include="names.h" />
     <ClInclude Include="match.h" />
     <ClInclude Include="match_all.h" />
@@ -176,10 +184,14 @@
     <ClInclude Include="rescale.h" />
     <ClInclude Include="r_date.h" />
     <ClInclude Include="split.h" />
+    <ClInclude Include="string_vector.h" />
     <ClInclude Include="tail.h" />
     <ClInclude Include="tokenize.h" />
     <ClInclude Include="data_types.h" />
+    <ClInclude Include="typeof.h" />
     <ClInclude Include="unique.h" />
+    <ClInclude Include="variant_factor.h" />
+    <ClInclude Include="variant_vector.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="mpg.csv" />

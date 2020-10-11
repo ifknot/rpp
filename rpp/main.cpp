@@ -17,9 +17,10 @@ int main() {
 	R::data_frame d;
 
 	d["id"] = { 1, 2, 3, 4, 5 };
-	d["name"] = { "Rick", "Dan", "Michell", "Ryan", "Gary" };
+	d["name"] = { "Rick", "Dan", "Mary", "Ryan", "Gary" };
 	d["salary"] = { 623.3, 515.2, 611.0, 729.0, 843.25 };
 	d["start_date"] = as_dates({ "2013-09-23", "2012-01-01", "2015-03-27", "2014-11-15", "2014-05-11" }, "%Y-%m-%d");
+	d["male"] = { TRUE, TRUE, FALSE, TRUE, TRUE};
 
 	// print out data table 
 	std::cout << d << '\n';
@@ -36,7 +37,35 @@ int main() {
 
 	//std::cout << d["name"] << "\n\n";
 
-	std::cout << sort<r_date>(d["start_date"], true) << "\n\n";
+	/*
+	std::cout << sort<r_integer>(d["id"]) << "\n\n";
+	std::cout << unique<r_integer>(d["id"]) << "\n\n";
+	std::cout << sort<r_integer>(unique<r_integer>(d["id"])) << "\n\n";
+	std::cout << unique<r_integer>(sort<r_integer>(d["id"])) << "\n\n";
+
+	std::cout << sort<r_string>(d["name"]) << "\n\n";
+	std::cout << unique<r_string>(d["name"]) << "\n\n";
+	std::cout << sort<r_string>(unique<r_string>(d["name"])) << "\n\n";
+	std::cout << unique<r_string>(sort<r_string>(d["name"])) << "\n\n";
+	
+	std::cout << sort<r_numeric>(d["salary"]) << "\n\n";
+	std::cout << as_string(sort<r_numeric>(d["salary"])) << "\n\n";
+
+	std::cout << sort<r_date>(d["start_date"]) << "\n\n";
+	std::cout << as_string(sort<r_date>(d["start_date"])) << "\n\n";
+
+	std::cout << sort<r_integer>(d["id"]) << "\n\n";
+	std::cout << as_string(sort<r_integer>(d["id"])) << "\n\n";
+
+	std::cout << sort<r_logical>(d["male"]) << "\n\n";
+	std::cout << as_string(sort<r_logical>(d["male"])) << "\n\n";
+	*/
+
+	std::cout << factor<r_string>(d["name"]) << "\n\n";
+
+	//std::cout << sort<r_date>(d["start_date"], true) << "\n\n";
+
+	std::cout << split<r_integer>(d, d["id"]) << "\n\n";
 
 	//auto salary_range = range<r_numeric>(d["salary"]);
 
@@ -93,27 +122,29 @@ int main() {
 
 	//std::cout << df << "\n\n";
 
-	auto mpg = read_csv("mpg.csv");
+	//auto mpg = read_csv("mpg.csv");
 
 	//std::cout << names(mpg) << "\n\n";
 
-	try {
+	//try {
 		//mpg["year"] = as_dates({ mpg["displ"] });
-		mpg["year"] = as_dates({ mpg["year"] }, "%Y");
-	}
-	catch (const std::exception& e) {
-		std::cerr << e.what() << "\n\n";
-	}
+		//mpg["year"] = as_dates({ mpg["year"] }, "%Y");
+	//}
+	//catch (const std::exception& e) {
+		//std::cerr << e.what() << "\n\n";
+	//}
 
-	std::cout << head(mpg);
+	//std::cout << head(mpg);
 
 	//if (!dirty<_num>(mpg["displ"]).size()) {
 
-		//split<r_numeric>(mpg, mpg["displ"]);
+		//split<r_date>(mpg, mpg["year"]);
 
 	//}
 
-	std::cout << sort<r_date>(mpg["year"]);
+	//std::cout << sort<r_date>(mpg["year"]);
+
+	//std::cout << split<r_date>(mpg, mpg["year"]) << "\n\n";
 
 	//data_frame data;
 

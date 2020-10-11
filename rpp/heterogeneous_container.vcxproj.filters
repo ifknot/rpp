@@ -45,6 +45,24 @@
     <ClCompile Include="r_date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="r_logical.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="as_string.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="typeof.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="variant_factor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="string_vector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ordinal_vector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="mpg.csv">
@@ -116,6 +134,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="r_date.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="r_logical.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="typeof.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="variant_vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="variant_factor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="string_vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ordinal_vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
