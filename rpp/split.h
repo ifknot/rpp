@@ -23,16 +23,14 @@ namespace R {
 	data_frame_list split(data_frame& x, variant_vector& v) {
 		data_frame_list split_list;
 		const auto& [ordinal, levels] = factor<T>(v);			// define the groups by the factor levels
-		for (int rank{ first }; const auto & level : levels) {
-			data_frame df;
-			for (const auto& [key, vec] : x) {
-				for (auto row{ 0u }; const auto & v : vec) {
-					if (ordinal[row++] == rank) {
-						df[key].push_back(v);
+		for (int rank{ first }; const auto & level : levels) {	// for each of the levels 
+			for (const auto& [key, vec] : x) {					// for each column in the source data frame
+				for (auto row{ 0u }; const auto & v : vec) {	// for each row in that column
+					if (ordinal[row++] == rank) {				// check the factor's ordinals against the current rank
+						split_list[level][key].push_back(v);    // copy that row of that column to the level data frame
 					}
 				}
-			}
-			split_list[level] = df;
+			}							
 			++rank;
 		}
 		return split_list;
@@ -52,16 +50,14 @@ namespace R {
 	data_frame_list split(data_frame& x, variant_vector&& v) {
 		data_frame_list split_list;
 		const auto& [ordinal, levels] = factor<T>(v);			// define the groups by the factor levels
-		for (int rank{ first }; const auto & level : levels) {
-			data_frame df;
-			for (const auto& [key, vec] : x) {
-				for (auto row{ 0u }; const auto & v : vec) {
-					if (ordinal[row++] == rank) {
-						df[key].push_back(v);
+		for (int rank{ first }; const auto & level : levels) {	// for each of the levels 
+			for (const auto& [key, vec] : x) {					// for each column in the source data frame
+				for (auto row{ 0u }; const auto & v : vec) {	// for each row in that column
+					if (ordinal[row++] == rank) {				// check the factor's ordinals against the current rank
+						split_list[level][key].push_back(v);    // copy that row of that column to the level data frame
 					}
 				}
 			}
-			split_list[level] = df;
 			++rank;
 		}
 		return split_list;
