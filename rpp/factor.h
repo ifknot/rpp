@@ -35,7 +35,7 @@ namespace R {
 				rank++;
 			}
 		}
-		return std::make_pair(ordinal_vector{ ordinals.rbegin(), ordinals.rend() }, as_string(categories));
+		return std::make_pair(ordinals, as_string(categories));
 	}
 
 	/**
@@ -58,16 +58,16 @@ namespace R {
 			: R::unique<T>(R::sort<T>(x))
 		};
 		ordinal_vector ordinals;
-		for (const auto& i : x) {		// check each x
+		for (const auto& v : x) {		// check each x
 			r_integer rank{ first };
 			for (const auto& c : categories) {	// against each category
-				if (std::get<T>(c) == std::get<T>(i)) {
+				if (std::get<T>(c) == std::get<T>(v)) {
 					ordinals.push_back(rank);
 				}
 				rank++;
 			}
 		}
-		return std::make_pair(ordinal_vector{ ordinals.rbegin(), ordinals.rend() }, as_string(categories));
+		return std::make_pair(ordinals, as_string(categories));
 	}
 
 }
