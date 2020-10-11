@@ -64,18 +64,18 @@ int main() {
 	//std::cout << as_string(sort<r_date>(d["start_date"])) << "\n\n";
 	
 	//std::cout << sort<r_logical>(d["male"]) << "\n\n";
-	std::cout << unique<r_logical>(d["male"]) << "\n\n";
+	//std::cout << unique<r_logical>(d["male"]) << "\n\n";
 	//std::cout << sort<r_logical>(unique<r_logical>(d["male"])) << "\n\n";
 	//std::cout << unique<r_logical>(sort<r_logical>(d["male"])) << "\n\n";
 	//std::cout << as_string(sort<r_logical>(d["male"])) << "\n\n";
 
-	std::cout << unique<r_date>(as_dates({ "2013", "2013", "2012", "2015", "2014", "2014", "2013" }, "%Y")) << "\n\n";
+	//std::cout << unique<r_date>(as_dates({ "2013", "2013", "2012", "2015", "2014", "2014", "2013" }, "%Y")) << "\n\n";
 
-	std::cout << factor<r_date>(d["start_date"]) << "\n\n";
+	//std::cout << factor<r_date>(d["start_date"]) << "\n\n";
 
 	//std::cout << sort<r_date>(d["start_date"], true) << "\n\n";
 
-	//std::cout << split<r_logical>(d, d["male"]) << "\n\n";
+	std::cout << split<r_logical>(d, d["male"]) << "\n\n";
 
 	//std::cout << split<r_logical>(d, { TRUE, TRUE, FALSE, TRUE, TRUE }) << "\n\n";
 
