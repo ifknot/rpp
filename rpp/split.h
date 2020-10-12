@@ -9,6 +9,9 @@
 
 namespace R {
 
+
+
+
 	/**
 	 * @ brief Divide into groups.
 	 * split divides the data in the data frame x into the groups defined by vector f.  

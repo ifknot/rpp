@@ -154,5 +154,8 @@
     <ClInclude Include="ordinal_vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="data_frame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
