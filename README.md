@@ -10,7 +10,7 @@ My blog page [libfbp.blogspot.com](http://libfbp.blogspot.com/2020/09/a-heteroge
 ## R-ish types and functions so far:
 |structures | | | | | |
 |----------------	|---------------	|--------------	|---------------	|----------------	|-------------------	|
-|[x] vector       |[x] variant      |[x] data_frame |[x] list         |[ ] matrix       |[ ]                  |
+|[x] vector       |[x] factor       |[x] data_frame |[x] list         |[ ] matrix       |[ ]                  |
 
 |types | | | | | |
 |----------------	|---------------	|--------------	|---------------	|----------------	|-------------------	|
@@ -19,7 +19,7 @@ My blog page [libfbp.blogspot.com](http://libfbp.blogspot.com/2020/09/a-heteroge
 
 | |functions| | | | | |
 |---------------- |----------------	|---------------	|--------------	|---------------	|----------------	|-------------------	|
-|a|[x] as_dates    |[ ] as_string    |[ ]            |[ ]              |[ ]              |[ ]                  |
+|a|[x] as_dates    |[x] as_string    |[ ]            |[ ]              |[ ]              |[ ]                  |
 |b|[ ]             |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
 |c|[ ]             |[ ]              |[ ] colnames   |[ ]              |[ ]              |[ ]                  |
 |f|[x] factor      |[x] floor        |[ ]            |[ ]              |[ ]              |[ ]                  |
@@ -27,8 +27,8 @@ My blog page [libfbp.blogspot.com](http://libfbp.blogspot.com/2020/09/a-heteroge
 |m|[x] match       |[x] match_all    |[ ]            |[ ]              |[ ]              |[ ]                  |
 |n|[ ] names       |[ ] ncol         |[ ] nrow       |[ ]              |[ ]              |[ ]                  |
 |r|[x] range       |[x] read_csv     |[x] rescale    |[ ]              |[ ]              |[ ]                  |
-|s|[x] sort        |[ ] split        |[ ]            |[ ]              |[ ]              |[ ]                  |
-|t|[x] tail        |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
+|s|[x] sort        |[x] split        |[ ]            |[ ]              |[ ]              |[ ]                  |
+|t|[x] tail        |[x] typeof       |[ ]            |[ ]              |[ ]              |[ ]                  |
 |u|[x] unique      |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
 ## example usage
 main.cpp is your best place at the moment
