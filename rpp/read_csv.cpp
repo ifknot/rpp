@@ -59,7 +59,6 @@ namespace R {
 					case token_t::date_t:
 						// TODO: date_t
 					case token_t::string_t:
-						//std::cout << field << " " << column[nfield] << '\n';
 						d[column[nfield]].push_back(field.substr(1, field.size() - 2));
 						break;
 					case token_t::raw_t:
@@ -71,7 +70,6 @@ namespace R {
 						);
 						break;
 					}
-					//std::cout << field << '\n';
 					nfield++;
 				}
 				nline++;

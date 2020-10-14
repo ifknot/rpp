@@ -79,8 +79,6 @@ int main() {
 
 	std::cout << ldf << "\n\n";
 
-	//std::cout << split<r_logical>(d, d["male"]); // << "\n\n";
-
 	//std::cout << split<r_logical>(d, { TRUE, TRUE, FALSE, TRUE, TRUE }) << "\n\n";
 
 	//auto salary_range = range<r_numeric>(d["salary"]);
@@ -138,19 +136,18 @@ int main() {
 
 	//std::cout << df << "\n\n";
 
-	//auto mpg = read_csv("mpg.csv");
+	auto mpg = read_csv("mpg.csv");
 
 	//std::cout << names(mpg) << "\n\n";
 
-	//try {
-		//mpg["year"] = as_dates({ mpg["displ"] });
-		//mpg["year"] = as_dates({ mpg["year"] }, "%Y");
-	//}
-	//catch (const std::exception& e) {
-		//std::cerr << e.what() << "\n\n";
-	//}
+	try {
+		mpg["year"] = as_dates({ mpg["year"] }, "%Y");
+	}
+	catch (const std::exception& e) {
+		std::cerr << e.what() << "\n\n";
+	}
 
-	//std::cout << head(mpg);
+	std::cout << head(mpg);
 
 	//if (!dirty<_num>(mpg["displ"]).size()) {
 
@@ -160,7 +157,11 @@ int main() {
 
 	//std::cout << sort<r_date>(mpg["year"]);
 
-	//std::cout << split<r_date>(mpg, mpg["year"]) << "\n\n";
+	//auto spl = split<r_date>(mpg, mpg["year"]);
+
+	auto spl = split<r_integer>(mpg, mpg["cyl"]);
+	
+	std::cout << spl << "\n\n";
 
 	//data_frame data;
 

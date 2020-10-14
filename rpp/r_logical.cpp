@@ -1,3 +1,4 @@
+
 #include "r_logical.h"
 
 std::ostream& operator<<(std::ostream& os, const R::r_logical& b) {

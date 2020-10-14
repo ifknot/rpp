@@ -1,8 +1,8 @@
 #pragma once
 
-#include "data_structures.h"
-
 #include <algorithm>
+
+#include "data_structures.h"
 
 namespace R {
 

@@ -1,3 +1,4 @@
+
 #include "string_vector.h"
 
 std::ostream& operator<<(std::ostream& os, const R::string_vector& sv) {

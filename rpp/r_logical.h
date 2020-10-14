@@ -1,6 +1,11 @@
+
 #pragma once
 
 #include <ostream>
+
+#define TRUE R::r_logical{true}
+
+#define FALSE R::r_logical{false}
 
 namespace R {
 

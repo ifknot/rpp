@@ -1,3 +1,4 @@
+
 #include "variant_vector.h"
 
 std::ostream& operator << (std::ostream& os, const R::variant_vector& vv) {

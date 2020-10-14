@@ -112,9 +112,6 @@
     <ClInclude Include="names.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="head.h">
       <Filter>Header Files</Filter>
     </ClInclude>

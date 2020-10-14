@@ -166,7 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="as_dates.h" />
-    <ClInclude Include="constants.h" />
     <ClInclude Include="data_frame.h" />
     <ClInclude Include="dirty.h" />
     <ClInclude Include="data_structures.h" />

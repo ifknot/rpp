@@ -1,3 +1,4 @@
+
 #include "variant_factor.h"
 
 std::ostream& operator<<(std::ostream& os, const R::variant_factor& vf) {

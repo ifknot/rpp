@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <variant>
@@ -5,7 +6,6 @@
 #include <array>
 #include <complex>
 
-#include "constants.h"
 #include "r_logical.h"
 #include "r_date.h"
 

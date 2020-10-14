@@ -1,10 +1,9 @@
+
 #include "tokenize.h"
 
 #include <regex>
 
 namespace R {
-
-
 
 	token_t tokenize(std::string& lexeme) {
 		if (lexeme == "true" || lexeme == "false") {
