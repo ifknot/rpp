@@ -20,3 +20,6 @@ namespace R {
 	using data_frame = std::unordered_map<r_string, variant_vector>;
 
 }
+
+std::ostream& operator << (std::ostream& os, const R::data_frame& df);
+

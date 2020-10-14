@@ -30,9 +30,6 @@
     <ClCompile Include="read_csv.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="overloads.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="names.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -63,6 +60,12 @@
     <ClCompile Include="ordinal_vector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="variant_vector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data_frame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="mpg.csv">
@@ -83,9 +86,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="unique.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="overloads.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="factor.h">
@@ -155,6 +155,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data_frame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

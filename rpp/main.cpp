@@ -11,7 +11,7 @@ using namespace R;
 
 int main() {
 
-	std::cout << "heterogeneous container\n\n";
+	std::cout << "RPP\n\n";
 
 	
 	R::data_frame d;
@@ -75,7 +75,11 @@ int main() {
 
 	//std::cout << sort<r_date>(d["start_date"], true) << "\n\n";
 
-	std::cout << split<r_logical>(d, d["male"]) << "\n\n";
+	auto ldf = split<r_logical>(d, d["male"]);
+
+	std::cout << ldf << "\n\n";
+
+	//std::cout << split<r_logical>(d, d["male"]); // << "\n\n";
 
 	//std::cout << split<r_logical>(d, { TRUE, TRUE, FALSE, TRUE, TRUE }) << "\n\n";
 

@@ -4,13 +4,7 @@
 #include "factor.h"
 #include "as_string.h"
 
-#include <map>
-#include <string>
-
 namespace R {
-
-
-
 
 	/**
 	 * @ brief Divide into groups.
@@ -23,8 +17,8 @@ namespace R {
 	 * @return		list of data frames containing the values for the groups, named by the levels of f (after converting to a factor)
 	 */
 	template<typename T>
-	data_frame_list split(data_frame& x, variant_vector& v) {
-		data_frame_list split_list;
+	 list<data_frame> split(data_frame& x, variant_vector& v) {
+		list<data_frame> split_list;
 		const auto& [ordinal, levels] = factor<T>(v);			// define the groups by the factor levels
 		for (int rank{ first }; const auto & level : levels) {	// for each of the levels 
 			for (const auto& [key, vec] : x) {					// for each column in the source data frame
@@ -50,8 +44,8 @@ namespace R {
 	 * @return		list of data frames containing the values for the groups, named by the levels of f (after converting to a factor)
 	 */
 	template<typename T>
-	data_frame_list split(data_frame& x, variant_vector&& v) {
-		data_frame_list split_list;
+	list<data_frame> split(data_frame& x, variant_vector&& v) {
+		list<data_frame> split_list;
 		const auto& [ordinal, levels] = factor<T>(v);			// define the groups by the factor levels
 		for (int rank{ first }; const auto & level : levels) {	// for each of the levels 
 			for (const auto& [key, vec] : x) {					// for each column in the source data frame

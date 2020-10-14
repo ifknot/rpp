@@ -18,5 +18,6 @@ namespace R {
 	 */
 	using variant_vector = std::vector<r_type>;
 
-
 }
+
+std::ostream& operator << (std::ostream& os, const R::variant_vector& vv);
