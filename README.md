@@ -25,7 +25,7 @@ My blog page [libfbp.blogspot.com](http://libfbp.blogspot.com/2020/09/a-heteroge
 |f|[x] factor      |[x] floor        |[ ]            |[ ]              |[ ]              |[ ]                  |
 |h|[x] head        |[ ]              |[ ]            |[ ]              |[ ]              |[ ]                  |
 |m|[x] match       |[x] match_all    |[ ]            |[ ]              |[ ]              |[ ]                  |
-|n|[ ] names       |[ ] ncol         |[ ] nrow       |[ ]              |[ ]              |[ ]                  |
+|n|[x] names       |[ ] ncol         |[ ] nrow       |[ ]              |[ ]              |[ ]                  |
 |r|[x] range       |[x] read_csv     |[x] rescale    |[ ]              |[ ]              |[ ]                  |
 |s|[x] sort        |[x] split        |[ ]            |[ ]              |[ ]              |[ ]                  |
 |t|[x] tail        |[x] typeof       |[ ]            |[ ]              |[ ]              |[ ]                  |
